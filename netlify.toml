@@ -1,0 +1,9 @@
+# Déploiement Netlify du site (Base directory : la racine du repo)
+# Netlify détecte Next.js et installe automatiquement son adaptateur.
+# Variable d'environnement à définir dans Netlify : BACKEND_URL = URL du site backend
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
