@@ -1,4 +1,4 @@
-# Déploiement Netlify du frontend (site Netlify dont le « Base directory » est frontend/)
+# Déploiement Netlify du site (Base directory : la racine du repo)
 # Netlify détecte Next.js et installe automatiquement son adaptateur.
 # Variable d'environnement à définir dans Netlify : BACKEND_URL = URL du site backend
 [build]

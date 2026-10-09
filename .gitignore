@@ -1,16 +1,7 @@
 node_modules/
 .next/
 out/
-*.tsbuildinfo
-
-# secrets et données locales
-.env
 .env*.local
-backend/data/
-
-# outils locaux
+.env
+*.tsbuildinfo
 .claude/
-
-# fichiers d'origine, hors des deux projets
-Luxury Feel.html
-LOGO_LUXURY_FEEL.jpeg
