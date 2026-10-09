@@ -1,0 +1,750 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Luxury Feel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap">
+<style>
+/* Layout: one cream ground, square corners, polaroid collage hero; one typeface (Work Sans) throughout.
+   Lash Gems tokens + the client's brown / light brown / light pink. Single light look by design. */
+:root{
+  --cream:#f2e8d8;      /* page ground (Lash Gems) */
+  --ink:#241f21;        /* black: copy (Lash Gems) */
+  --crimson:#960018;    /* brand: wordmark + headlines (Lash Gems) */
+  --rose:#a35257;       /* pink marks only, never text (Lash Gems) */
+  --frame:#e8e8e4;      /* polaroid frames (Lash Gems) */
+  --cocoa:#5b3a2c;      /* brown: secondary copy, footer ground */
+  --latte:#d8c2a4;      /* light brown: hairlines, quiet fills */
+  --blush:#f1d8d3;      /* light pink: selected states */
+  --font:"Work Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --gutter:max(16px, 6%);
+  --s1:8px; --s2:16px; --s3:24px; --s4:32px; --s6:48px; --s8:72px;
+  --t-xs:12px; --t-sm:14px; --t-md:18px; --t-lg:24px;
+  --t-xl:clamp(28px, 4.2vw, 44px); --t-hero:clamp(34px, 7vw, 84px);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:var(--font);font-weight:300;font-size:var(--t-md);line-height:1.45;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+button,input,textarea,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--crimson);outline-offset:3px}
+h1,h2,h3{font-weight:300;margin:0;text-wrap:balance}
+p{margin:0}
+.wrap{padding-inline:var(--gutter);max-width:1240px;margin-inline:auto}
+.eyebrow{font-size:var(--t-xs);letter-spacing:.22em;text-transform:uppercase;font-weight:400;color:var(--cocoa)}
+.h2{font-size:var(--t-xl);line-height:1.12;color:var(--crimson);text-transform:lowercase;letter-spacing:-.01em}
+.lede{color:var(--cocoa);max-width:58ch}
+.sparkles{display:block;letter-spacing:2px;line-height:1;margin-bottom:var(--s1)}
+.sparkles small{font-size:10px;vertical-align:2px}
+
+/* Buttons: square, tracked caps */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 26px;border:1px solid var(--ink);background:var(--ink);color:var(--cream);font-size:var(--t-xs);letter-spacing:.2em;text-transform:uppercase;font-weight:400;text-decoration:none;cursor:pointer;border-radius:0;transition:background .2s,color .2s,border-color .2s}
+.btn:hover{background:var(--crimson);border-color:var(--crimson)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--cream)}
+.btn[disabled]{opacity:.35;cursor:not-allowed}
+.btn[disabled]:hover{background:var(--ink);border-color:var(--ink)}
+.link{background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--rose);font-size:var(--t-sm)}
+
+/* Header */
+.hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--cream);border-bottom:1px solid transparent;transition:border-color .2s}
+.hdr.scrolled{border-bottom-color:var(--latte)}
+.hdr-in{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding-block:18px;gap:var(--s2)}
+.burger{justify-self:start;width:43px;height:16px;padding:0;border:0;background:none;cursor:pointer;display:flex;flex-direction:column;justify-content:space-between}
+.burger span{display:block;height:2px;background:var(--ink);transition:transform .25s}
+.burger[aria-expanded="true"] span:first-child{transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded="true"] span:last-child{transform:translateY(-7px) rotate(-45deg)}
+.mark{text-decoration:none;text-align:center;display:grid;gap:4px;justify-items:center}
+.mark-gem{width:22px;height:16px;display:block}
+.mark-word{font-size:clamp(17px,2.2vw,22px);letter-spacing:.32em;text-transform:uppercase;color:var(--crimson);font-weight:400;padding-left:.32em}
+.mark-word i{font-style:normal;color:var(--rose);font-size:.6em;vertical-align:.25em;margin:0 .15em}
+.mark-sub{font-size:9px;letter-spacing:.3em;color:var(--ink);padding-left:.3em}
+.nav-l,.nav-r{display:none;align-items:center;gap:var(--s4)}
+.nav-l a,.nav-r a.nl{font-size:var(--t-xs);letter-spacing:.2em;text-transform:uppercase;font-weight:400;text-decoration:none;padding-block:6px;border-bottom:1px solid transparent}
+.nav-l a[aria-current="page"],.nav-r a.nl[aria-current="page"]{border-bottom-color:var(--rose)}
+.nav-l a:hover,.nav-r a.nl:hover{border-bottom-color:var(--ink)}
+.right{justify-self:end;display:flex;align-items:center;gap:var(--s3)}
+.bag{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-size:var(--t-md)}
+.bag svg{width:30px;height:30px}
+.bag .n{font-variant-numeric:tabular-nums;min-width:1ch}
+.bag.bump svg{animation:bump .4s ease}
+@keyframes bump{40%{transform:scale(1.18)}}
+.nav-r .btn{min-height:40px;padding:0 18px}
+@media (min-width:900px){
+  .burger{display:none}
+  .nav-l,.nav-r{display:flex}
+  .hdr-in{padding-block:22px}
+}
+/* Mobile drawer */
+.drawer{position:fixed;inset:0;z-index:19;background:var(--cream);padding:calc(110px + env(safe-area-inset-top,0px)) var(--gutter) var(--s6);display:flex;flex-direction:column;gap:var(--s3);transform:translateY(-100%);transition:transform .35s cubic-bezier(.2,.7,.2,1);visibility:hidden}
+.drawer.open{transform:none;visibility:visible}
+.drawer a{font-size:30px;text-decoration:none;color:var(--crimson);text-transform:lowercase;border-bottom:1px solid var(--latte);padding-bottom:var(--s2)}
+.drawer .eyebrow{margin-top:auto}
+
+/* Views */
+main{min-height:60vh}
+.view{animation:fade .45s ease both}
+@keyframes fade{from{opacity:.0001;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* Hero collage */
+.hero{position:relative;overflow:hidden;padding-block:var(--s4) var(--s6)}
+.collage{position:relative;height:clamp(380px,56vw,620px);max-width:1240px;margin-inline:auto}
+.pola{position:absolute;background:var(--frame);padding:3.2% 3.2% 12%;box-shadow:0 1px 0 rgba(36,31,33,.08),0 10px 24px -14px rgba(91,58,44,.45);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.pola svg{display:block;width:100%;height:auto;aspect-ratio:1}
+.pola figcaption{position:absolute;left:8%;right:8%;bottom:3.4%;font-size:clamp(9px,1.1vw,13px);font-style:italic;color:var(--cocoa);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.collage:hover .pola{transform:rotate(var(--r)) translateY(-4px)}
+.pola{transform:rotate(var(--r))}
+.p1{left:2%;top:8%;width:26%;--r:-5deg}
+.p2{left:24%;top:30%;width:24%;--r:4deg;z-index:2}
+.p3{left:46%;top:2%;width:25%;--r:-2deg}
+.p4{left:64%;top:34%;width:22%;--r:6deg;z-index:2}
+.p5{left:80%;top:4%;width:19%;--r:-4deg}
+.hero-copy{position:absolute;z-index:5;left:var(--gutter);right:var(--gutter);top:22%;pointer-events:none}
+.hero-copy h1{font-size:var(--t-hero);line-height:.98;color:var(--crimson);text-transform:lowercase;letter-spacing:-.025em;max-width:11ch;font-weight:300}
+.hero-copy h1 em{font-style:italic}
+.hero-cta{display:flex;flex-wrap:wrap;gap:var(--s2);align-items:center;margin-top:var(--s4)}
+.hero-cta .meta{font-size:var(--t-sm);color:var(--cocoa)}
+@media (max-width:700px){
+  .collage{height:420px}
+  .p1{left:-6%;top:4%;width:46%}
+  .p2{left:30%;top:38%;width:40%}
+  .p3{left:58%;top:0;width:44%}
+  .p4{left:66%;top:52%;width:38%}
+  .p5{display:none}
+  .hero-copy{top:auto;bottom:4%}
+  .hero-copy h1{max-width:9ch}
+}
+
+.intro{padding-block:var(--s6)}
+.intro p{max-width:58ch;font-size:clamp(18px,2vw,22px);line-height:1.5}
+.intro em{font-style:italic}
+
+.sec{padding-block:var(--s6) var(--s8)}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:var(--s2);margin-bottom:var(--s4)}
+.sec-head > div{display:grid;gap:var(--s1);min-width:0}
+.rule{border:0;border-top:1px solid var(--latte);margin:0}
+
+/* Signature cards */
+.sig{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--s4)}
+.sig-card{display:grid;gap:var(--s2);text-decoration:none;cursor:pointer;background:none;border:0;padding:0;text-align:left}
+.sig-card .pola{position:relative;--r:0deg;transform:none;padding:4% 4% 4%}
+.sig-card:hover .pola{transform:rotate(-1.5deg)}
+.sig-card h3{font-size:var(--t-lg);color:var(--crimson);text-transform:lowercase}
+.sig-card p{font-size:var(--t-sm);color:var(--cocoa)}
+.sig-card .from{font-size:var(--t-xs);letter-spacing:.18em;text-transform:uppercase;font-weight:400;font-variant-numeric:tabular-nums}
+
+/* Steps (a real sequence) */
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--s4);counter-reset:s}
+.how li{list-style:none;border-top:1px solid var(--ink);padding-top:var(--s2);display:grid;gap:var(--s1)}
+.how li::before{counter-increment:s;content:counter(s,decimal-leading-zero);font-size:var(--t-xs);letter-spacing:.2em;color:var(--rose);font-weight:500}
+.how h3{font-size:var(--t-md);font-weight:400}
+.how p{font-size:var(--t-sm);color:var(--cocoa)}
+.how{padding:0;margin:0}
+
+/* Studio band */
+.studio{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--s6);align-items:start}
+.hours{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:var(--t-sm)}
+.hours td{padding:10px 0;border-bottom:1px solid var(--latte)}
+.hours td:last-child{text-align:right}
+.hours tr.today td{color:var(--crimson);font-weight:400}
+
+/* Services */
+.chips{display:flex;flex-wrap:wrap;gap:var(--s1);margin-bottom:var(--s4)}
+.chip{border:1px solid var(--latte);background:transparent;padding:10px 16px;font-size:var(--t-xs);letter-spacing:.16em;text-transform:uppercase;font-weight:400;cursor:pointer;border-radius:0}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--blush);border-color:var(--rose)}
+.cat{margin-bottom:var(--s6)}
+.cat > h3{font-size:var(--t-xs);letter-spacing:.24em;text-transform:uppercase;font-weight:400;color:var(--cocoa);padding-bottom:var(--s1);border-bottom:1px solid var(--ink)}
+.svc{display:grid;grid-template-columns:1fr auto;gap:var(--s1) var(--s3);padding-block:var(--s3);border-bottom:1px solid var(--latte);align-items:center;transition:background .2s}
+.svc.on{background:linear-gradient(90deg,var(--blush),transparent 85%)}
+.svc-main{min-width:0;display:grid;gap:6px}
+.svc-name{font-size:clamp(19px,2vw,22px);color:var(--ink);font-weight:400}
+.svc-desc{font-size:var(--t-sm);color:var(--cocoa);max-width:62ch}
+.svc-meta{font-size:var(--t-xs);letter-spacing:.14em;text-transform:uppercase;color:var(--cocoa);font-variant-numeric:tabular-nums;display:flex;gap:var(--s2);flex-wrap:wrap}
+.svc-meta b{font-weight:400;color:var(--ink)}
+.add{width:48px;height:48px;border:1px solid var(--ink);background:transparent;cursor:pointer;display:grid;place-items:center;border-radius:0;transition:background .2s,color .2s}
+.add svg{width:16px;height:16px;transition:transform .25s}
+.add:hover{background:var(--ink);color:var(--cream)}
+.add[aria-pressed="true"]{background:var(--crimson);border-color:var(--crimson);color:var(--cream)}
+.add[aria-pressed="true"] svg{transform:rotate(45deg)}
+
+/* Sticky booking bar */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:15;background:var(--ink);color:var(--cream);padding:14px var(--gutter) calc(14px + env(safe-area-inset-bottom,0px));display:flex;gap:var(--s2);align-items:center;justify-content:space-between;transform:translateY(110%);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.bar.show{transform:none}
+.bar .sum{font-size:var(--t-sm);font-variant-numeric:tabular-nums;min-width:0}
+.bar .sum span{display:block;font-size:var(--t-xs);letter-spacing:.16em;text-transform:uppercase;opacity:.7}
+.bar .btn{background:var(--cream);color:var(--ink);border-color:var(--cream);white-space:nowrap}
+.bar .btn:hover{background:var(--blush);border-color:var(--blush)}
+body.has-bar footer{padding-bottom:110px}
+
+/* Booking */
+.steps{display:flex;gap:0;margin:0 0 var(--s4);padding:0;list-style:none;border-bottom:1px solid var(--latte);overflow-x:auto}
+.steps li{flex:1;min-width:max-content}
+.steps button{width:100%;background:none;border:0;border-bottom:2px solid transparent;margin-bottom:-1px;padding:14px 12px 14px 0;text-align:left;cursor:pointer;font-size:var(--t-xs);letter-spacing:.16em;text-transform:uppercase;font-weight:400;color:var(--cocoa)}
+.steps button b{font-weight:500;color:var(--rose);margin-right:8px}
+.steps button[aria-current="step"]{color:var(--ink);border-bottom-color:var(--crimson)}
+.steps button:disabled{opacity:.45;cursor:not-allowed}
+.book{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--s6)}
+@media (min-width:960px){.book{grid-template-columns:minmax(0,1fr) 340px}}
+.panel h3{font-size:var(--t-lg);color:var(--crimson);text-transform:lowercase;margin-bottom:var(--s1)}
+.panel > p.lede{margin-bottom:var(--s3);font-size:var(--t-sm)}
+.pick{display:grid;gap:0}
+.pick label{display:grid;grid-template-columns:22px 1fr auto;gap:var(--s2);align-items:center;padding:14px 0;border-bottom:1px solid var(--latte);cursor:pointer;font-size:var(--t-md)}
+.pick label small{display:block;font-size:var(--t-xs);color:var(--cocoa);letter-spacing:.1em;text-transform:uppercase;font-variant-numeric:tabular-nums}
+.pick input{appearance:none;width:20px;height:20px;border:1px solid var(--ink);display:grid;place-items:center;margin:0;cursor:pointer}
+.pick input:checked{background:var(--crimson);border-color:var(--crimson)}
+.pick input:checked::after{content:"";width:6px;height:10px;border:solid var(--cream);border-width:0 2px 2px 0;transform:translateY(-1px) rotate(45deg)}
+.pick .price{font-variant-numeric:tabular-nums;font-size:var(--t-sm)}
+.pick-group{font-size:var(--t-xs);letter-spacing:.22em;text-transform:uppercase;color:var(--cocoa);padding-top:var(--s3);font-weight:400}
+
+.days{display:grid;grid-auto-flow:column;grid-auto-columns:76px;gap:var(--s1);overflow-x:auto;padding-bottom:var(--s1);margin-bottom:var(--s3);scroll-snap-type:x mandatory}
+.day{scroll-snap-align:start;border:1px solid var(--latte);background:transparent;padding:12px 0;display:grid;gap:2px;justify-items:center;cursor:pointer;border-radius:0;font-variant-numeric:tabular-nums}
+.day span{font-size:var(--t-xs);letter-spacing:.14em;text-transform:uppercase;color:var(--cocoa)}
+.day strong{font-size:22px;font-weight:300}
+.day:hover:not(:disabled){border-color:var(--ink)}
+.day[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--cream)}
+.day[aria-pressed="true"] span{color:var(--blush)}
+.day:disabled{opacity:.4;cursor:not-allowed;text-decoration:line-through}
+.times{display:grid;grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:var(--s1)}
+.time{border:1px solid var(--latte);background:transparent;padding:12px 0;cursor:pointer;font-variant-numeric:tabular-nums;font-size:var(--t-sm);border-radius:0}
+.time:hover{border-color:var(--ink)}
+.time[aria-pressed="true"]{background:var(--blush);border-color:var(--rose);font-weight:400}
+.note{font-size:var(--t-sm);color:var(--cocoa);margin-top:var(--s2);display:flex;gap:10px;align-items:baseline}
+.note::before{content:"✦";color:var(--rose);font-size:11px}
+
+.form{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--s3)}
+.field{display:grid;gap:6px;min-width:0}
+.field.full{grid-column:1/-1}
+.field label{font-size:var(--t-xs);letter-spacing:.18em;text-transform:uppercase;font-weight:400}
+.field input,.field textarea{width:100%;background:transparent;border:0;border-bottom:1px solid var(--ink);padding:10px 0;border-radius:0;font-size:var(--t-md)}
+.field textarea{min-height:90px;resize:vertical;border:1px solid var(--latte);padding:10px}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--crimson);box-shadow:0 1px 0 var(--crimson)}
+.field .err{font-size:var(--t-sm);color:var(--crimson);min-height:1.2em}
+.check{display:flex;gap:var(--s2);align-items:flex-start;font-size:var(--t-sm);cursor:pointer}
+.check input{accent-color:var(--crimson);width:18px;height:18px;margin-top:2px}
+
+.actions{display:flex;flex-wrap:wrap;gap:var(--s2);justify-content:space-between;align-items:center;margin-top:var(--s4)}
+
+.summary{background:var(--frame);padding:var(--s3);display:grid;gap:var(--s2);align-self:start;position:sticky;top:110px}
+.summary h4{margin:0;font-size:var(--t-xs);letter-spacing:.22em;text-transform:uppercase;font-weight:400}
+.summary ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.summary li{display:flex;justify-content:space-between;gap:var(--s2);font-size:var(--t-sm);font-variant-numeric:tabular-nums}
+.summary li span:first-child{min-width:0}
+.summary .tot{border-top:1px solid var(--ink);padding-top:var(--s2);display:flex;justify-content:space-between;font-variant-numeric:tabular-nums}
+.summary .when{font-size:var(--t-sm);color:var(--cocoa)}
+.summary .empty{font-size:var(--t-sm);color:var(--cocoa);font-style:italic}
+
+.review{display:grid;gap:var(--s2);border-top:1px solid var(--ink)}
+.review div{display:grid;grid-template-columns:140px 1fr;gap:var(--s2);padding:var(--s2) 0;border-bottom:1px solid var(--latte);font-size:var(--t-sm)}
+.review dt{font-size:var(--t-xs);letter-spacing:.18em;text-transform:uppercase;color:var(--cocoa);margin:0}
+.review dd{margin:0;min-width:0}
+@media (max-width:520px){.review div{grid-template-columns:1fr;gap:4px}}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,140%);background:var(--ink);color:var(--cream);padding:12px 20px;font-size:var(--t-sm);z-index:40;transition:transform .3s;max-width:calc(100% - 32px)}
+.toast.show{transform:translate(-50%,0)}
+
+/* Manage */
+.cards3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--s3)}
+.mcard{border:1px solid var(--latte);padding:var(--s3);display:grid;gap:var(--s2);align-content:start}
+.mcard svg{width:28px;height:28px;color:var(--rose)}
+.mcard h3{font-size:var(--t-lg);color:var(--crimson);text-transform:lowercase}
+.mcard p{font-size:var(--t-sm);color:var(--cocoa)}
+.mcard .btn{justify-self:start;margin-top:var(--s1)}
+.policy{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--s4) var(--s6);margin:0;padding:0;list-style:none}
+.policy li{display:grid;gap:6px;padding-top:var(--s2);border-top:1px solid var(--ink)}
+.policy b{font-weight:400;font-size:var(--t-md)}
+.policy span{font-size:var(--t-sm);color:var(--cocoa)}
+.faq details{border-bottom:1px solid var(--latte)}
+.faq summary{list-style:none;cursor:pointer;padding:var(--s3) 0;display:flex;justify-content:space-between;gap:var(--s2);font-size:var(--t-md)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--rose);font-size:24px;line-height:1;transition:transform .25s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding-bottom:var(--s3);font-size:var(--t-sm);color:var(--cocoa);max-width:64ch}
+
+/* Footer */
+footer{background:var(--cocoa);color:var(--cream);padding-block:var(--s6) var(--s4)}
+.f-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--s4)}
+footer .mark-word{color:var(--blush)}
+footer .mark{justify-items:start;text-align:left}
+footer .mark-sub{color:var(--latte)}
+footer h4{margin:0 0 var(--s2);font-size:var(--t-xs);letter-spacing:.22em;text-transform:uppercase;font-weight:400;color:var(--latte)}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:var(--t-sm)}
+footer a{text-decoration:none}
+footer a:hover{text-decoration:underline;text-underline-offset:4px}
+footer p{font-size:var(--t-sm);color:var(--latte)}
+.copy{margin-top:var(--s6);padding-top:var(--s3);border-top:1px solid rgba(242,232,216,.25);display:flex;flex-wrap:wrap;gap:var(--s2);justify-content:space-between;font-size:var(--t-xs);letter-spacing:.12em;color:var(--latte)}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+
+<header class="hdr" id="hdr">
+  <div class="wrap hdr-in">
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><span></span><span></span></button>
+    <nav class="nav-l" aria-label="Primary">
+      <a href="#home" data-nav="home">Home</a>
+      <a href="#services" data-nav="services">Our services</a>
+    </nav>
+    <a class="mark" href="#home" aria-label="Luxury Feel, home">
+      <svg class="mark-gem" viewBox="0 0 22 16" aria-hidden="true"><path d="M4 1h14l3 4.5L11 15 1 5.5z M1 5.5h20 M8 1 6.5 5.5 11 15l4.5-9.5L14 1" fill="none" stroke="var(--rose)" stroke-width="1.1" stroke-linejoin="round"/></svg>
+      <span class="mark-word">Luxury<i>✦</i>Feel</span>
+      <span class="mark-sub">LASHES · BROWS · BEAUTY</span>
+    </a>
+    <div class="right">
+      <nav class="nav-r" aria-label="Secondary">
+        <a class="nl" href="#manage" data-nav="manage">Manage bookings</a>
+        <a class="btn" href="#book" data-nav="book">Book now</a>
+      </nav>
+      <a class="bag" id="bag" href="#book" aria-label="Your booking, 0 services">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 11h18l-1.4 16H8.4z"/><path d="M12 11V9a4 4 0 0 1 8 0v2"/></svg>
+        <span class="n" id="bagN">0</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<nav class="drawer" id="drawer" aria-label="Menu">
+  <a href="#home">home</a>
+  <a href="#services">our services</a>
+  <a href="#book">book an appointment</a>
+  <a href="#manage">manage bookings</a>
+  <span class="eyebrow">Bookings powered by Fresha</span>
+</nav>
+
+<main id="main">
+
+<!-- HOME -->
+<section class="view" data-view="home" aria-label="Home">
+  <div class="hero">
+    <div class="collage" id="collage" aria-hidden="true"></div>
+    <div class="hero-copy">
+      <h1>feel the luxury in <em>every</em> lash</h1>
+      <div class="hero-cta" style="pointer-events:auto">
+        <a class="btn" href="#book">Book an appointment</a>
+        <a class="btn ghost" href="#services">Our services</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap intro">
+    <span class="sparkles">✧<small>⋆</small></span>
+    <p>Welcome to <em>Luxury Feel</em>, a calm, private studio for lash extensions, lifts and brows. Every set is mapped to your eye shape and lifestyle, applied lash by lash, and finished so you leave feeling like the most polished version of you.</p>
+  </div>
+
+  <div class="wrap sec">
+    <div class="sec-head">
+      <div><span class="eyebrow">Signature sets</span><h2 class="h2">the most requested looks</h2></div>
+      <a class="link" href="#services">See the full menu</a>
+    </div>
+    <div class="sig" id="sig"></div>
+  </div>
+
+  <div class="wrap sec" style="padding-top:0">
+    <div class="sec-head"><div><span class="eyebrow">How booking works</span><h2 class="h2">three steps to your chair</h2></div></div>
+    <ol class="how">
+      <li><h3>Choose your services</h3><p>Pick a full set, a fill or a lift. Add as many as you like to your booking.</p></li>
+      <li><h3>Pick a day and time</h3><p>Choose a preferred slot. We open Monday to Saturday.</p></li>
+      <li><h3>Confirm on Fresha</h3><p>Fresha holds your slot, sends reminders, and lets you change it any time.</p></li>
+    </ol>
+  </div>
+
+  <div class="wrap sec" style="padding-top:0">
+    <div class="studio">
+      <div style="display:grid;gap:var(--s2)">
+        <span class="eyebrow">The studio</span>
+        <h2 class="h2">by appointment only</h2>
+        <p class="lede">One client at a time, a quiet room, fresh linens and a warm blanket. Arrive with clean lashes and no eye makeup so we can start right away.</p>
+        <div><a class="btn ghost" href="#manage">Booking policies</a></div>
+      </div>
+      <table class="hours" aria-label="Opening hours"><tbody id="hours"></tbody></table>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="view" data-view="services" aria-label="Our services" hidden>
+  <div class="wrap sec">
+    <div class="sec-head">
+      <div><span class="eyebrow">The menu</span><h1 class="h2" style="font-size:var(--t-hero);line-height:1">our services</h1></div>
+      <p class="lede" style="max-width:42ch;font-size:var(--t-sm)">Tap + to add a service to your booking. Fills keep your set full and are for lashes applied in our studio within the last three weeks.</p>
+    </div>
+    <div class="chips" id="chips" role="group" aria-label="Filter services"></div>
+    <div id="menu"></div>
+  </div>
+</section>
+
+<!-- BOOK -->
+<section class="view" data-view="book" aria-label="Book an appointment" hidden>
+  <div class="wrap sec">
+    <div class="sec-head"><div><span class="eyebrow">Book an appointment</span><h1 class="h2" style="font-size:var(--t-hero);line-height:1">reserve your time</h1></div></div>
+    <ol class="steps" id="steps"></ol>
+    <div class="book">
+      <div class="panel" id="panel"></div>
+      <aside class="summary" id="summary" aria-live="polite"></aside>
+    </div>
+  </div>
+</section>
+
+<!-- MANAGE -->
+<section class="view" data-view="manage" aria-label="Manage bookings" hidden>
+  <div class="wrap sec">
+    <div class="sec-head">
+      <div><span class="eyebrow">Your appointments</span><h1 class="h2" style="font-size:var(--t-hero);line-height:1">manage bookings</h1></div>
+      <p class="lede" style="max-width:44ch;font-size:var(--t-sm)">Your booking lives in your Fresha account. Sign in with the email or phone number you booked with to see, move or cancel it.</p>
+    </div>
+    <div class="cards3">
+      <article class="mcard">
+        <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="4" y="6" width="20" height="18"/><path d="M4 11h20M9 3v5M19 3v5M11 17h6M14 14v6"/></svg>
+        <h3>reschedule</h3>
+        <p>Move your appointment to another day up to 24 hours before it starts, at no charge.</p>
+        <a class="btn ghost fresha" href="#" target="_blank" rel="noopener">Open Fresha</a>
+      </article>
+      <article class="mcard">
+        <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="4" y="6" width="20" height="18"/><path d="M4 11h20M9 3v5M19 3v5M11 15l6 6M17 15l-6 6"/></svg>
+        <h3>cancel</h3>
+        <p>Cancel through Fresha with 24 hours' notice. Later cancellations may lose the deposit.</p>
+        <a class="btn ghost fresha" href="#" target="_blank" rel="noopener">Open Fresha</a>
+      </article>
+      <article class="mcard">
+        <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="14" cy="15" r="10"/><path d="M14 9v6l4 3"/></svg>
+        <h3>running late</h3>
+        <p>We hold your slot for 15 minutes. After that we may shorten the service or rebook you.</p>
+        <a class="btn ghost fresha" href="#" target="_blank" rel="noopener">Message us on Fresha</a>
+      </article>
+    </div>
+  </div>
+
+  <div class="wrap sec" style="padding-top:0">
+    <div class="sec-head"><div><span class="eyebrow">Policies</span><h2 class="h2">before your visit</h2></div></div>
+    <ul class="policy">
+      <li><b>Deposit</b><span>A deposit secures new full sets and is taken off your final bill.</span></li>
+      <li><b>24-hour notice</b><span>Change or cancel at least 24 hours ahead to keep your deposit.</span></li>
+      <li><b>Patch test</b><span>New clients with sensitive eyes can book a free patch test 48 hours before.</span></li>
+      <li><b>Fills</b><span>Fills need at least 40% of your lashes still in place, otherwise we book a full set.</span></li>
+      <li><b>Come prepared</b><span>Arrive with clean lashes, no mascara, and contact lenses out.</span></li>
+      <li><b>Aftercare</b><span>Keep lashes dry for 24 hours and brush them gently each morning.</span></li>
+    </ul>
+  </div>
+
+  <div class="wrap sec faq" style="padding-top:0">
+    <div class="sec-head"><div><span class="eyebrow">Questions</span><h2 class="h2">good to know</h2></div></div>
+    <details><summary>I didn't get a confirmation. Is my booking made?</summary><p>Your booking is only confirmed when Fresha emails or texts you. If nothing arrived within a few minutes, check your spam folder, then sign in to Fresha to see if it's listed.</p></details>
+    <details><summary>Can I change the service I booked?</summary><p>Yes. In Fresha, open the appointment and choose reschedule, or cancel and book again. If the new service is longer we'll need a slot that fits it.</p></details>
+    <details><summary>How long does a full set last?</summary><p>Most clients come back for a fill every two to three weeks, as natural lashes shed and take extensions with them.</p></details>
+    <details><summary>Do I need a Fresha account?</summary><p>Fresha asks for your name, email and phone when you book. You can sign in later with the same details to manage your appointments.</p></details>
+  </div>
+</section>
+</main>
+
+<div class="bar" id="bar" role="region" aria-label="Your booking">
+  <div class="sum" id="barSum"></div>
+  <a class="btn" href="#book" id="barBtn">Choose a time</a>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div style="display:grid;gap:var(--s2)">
+        <a class="mark" href="#home" aria-label="Luxury Feel, home">
+          <span class="mark-word" style="padding-left:0">Luxury<i>✦</i>Feel</span>
+          <span class="mark-sub" style="padding-left:0">LASHES · BROWS · BEAUTY</span>
+        </a>
+        <p>Lash extensions, lifts and brows, by appointment.</p>
+      </div>
+      <div><h4>Visit</h4><ul><li><a href="#services">Our services</a></li><li><a href="#book">Book an appointment</a></li><li><a href="#manage">Manage bookings</a></li></ul></div>
+      <div><h4>Hours</h4><ul><li>Mon – Fri · 09:00 – 19:00</li><li>Saturday · 09:00 – 17:00</li><li>Sunday · Closed</li></ul></div>
+      <div><h4>Bookings</h4><p>All appointments are booked and managed securely through Fresha.</p></div>
+    </div>
+    <div class="copy">
+      <span>© <span id="yr">2026</span> Luxury Feel. All rights reserved.</span>
+      <span>Website content and photography may not be reused without permission.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ===== Edit these ===== */
+const FRESHA_URL = "https://www.fresha.com/";   // replace with your Fresha booking link
+const CURRENCY = "€";
+const SERVICES = [
+  {id:"classic",  cat:"Full sets",    name:"Classic full set",   mins:120, price:75,  desc:"One extension on each natural lash. Clean, defined and mascara-like."},
+  {id:"hybrid",   cat:"Full sets",    name:"Hybrid full set",    mins:135, price:90,  desc:"Classic and volume fans blended for soft texture and fullness.", sig:true},
+  {id:"volume",   cat:"Full sets",    name:"Volume full set",    mins:150, price:105, desc:"Handmade fans of fine lashes for a dense, fluffy line.", sig:true},
+  {id:"mega",     cat:"Full sets",    name:"Mega volume set",    mins:165, price:125, desc:"Ultra-fine fans for the darkest, most dramatic finish."},
+  {id:"wet",      cat:"Full sets",    name:"Wet look set",       mins:135, price:95,  desc:"Closed, spiky fans that look glossy and freshly wet.", sig:true},
+  {id:"fclassic", cat:"Fills",        name:"Classic fill",       mins:75,  price:50,  desc:"Refresh a classic set within three weeks."},
+  {id:"fhybrid",  cat:"Fills",        name:"Hybrid fill",        mins:80,  price:60,  desc:"Refresh a hybrid set within three weeks."},
+  {id:"fvolume",  cat:"Fills",        name:"Volume fill",        mins:90,  price:70,  desc:"Refresh a volume or mega set within three weeks."},
+  {id:"lift",     cat:"Lift & brows", name:"Lash lift & tint",   mins:60,  price:60,  desc:"Lifts and darkens your own lashes for six to eight weeks."},
+  {id:"lam",      cat:"Lift & brows", name:"Brow lamination",    mins:45,  price:50,  desc:"Sets brows into a brushed-up, fuller shape."},
+  {id:"shape",    cat:"Lift & brows", name:"Brow shape & tint",  mins:30,  price:30,  desc:"Wax, tidy and tint to frame the face."},
+  {id:"removal",  cat:"Extras",       name:"Lash removal",       mins:20,  price:20,  desc:"Gentle, safe removal of extensions from any studio."},
+  {id:"patch",    cat:"Extras",       name:"Patch test",         mins:10,  price:0,   desc:"Free. Book 48 hours before your first set."}
+];
+const HOURS = [null,[9,19],[9,19],[9,19],[9,19],[9,19],[9,17]]; // Sun..Sat (null = closed)
+/* ====================== */
+
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const fmtP = n => n === 0 ? "Free" : CURRENCY + n;
+const fmtD = m => { const h = Math.floor(m/60), r = m%60; return (h? h+"h":"") + (r? (h?" ":"")+r+"m":""); };
+const pad = n => String(n).padStart(2,"0");
+const DAYN = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+const DAYL = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+$$(".fresha").forEach(a => a.href = FRESHA_URL);
+$("#yr").textContent = new Date().getFullYear();
+
+/* ---------- state ---------- */
+const state = { bag:new Set(), filter:"All", step:0, date:null, time:null, info:{name:"",phone:"",email:"",notes:"",first:false} };
+try { const s = JSON.parse(localStorage.getItem("lf-booking")||"null"); if (s){ (s.bag||[]).forEach(id=>SERVICES.some(x=>x.id===id)&&state.bag.add(id)); Object.assign(state.info, s.info||{}); } } catch(e){}
+function save(){ try{ localStorage.setItem("lf-booking", JSON.stringify({bag:[...state.bag], info:state.info})); }catch(e){} }
+const chosen = () => SERVICES.filter(s => state.bag.has(s.id));
+const totals = () => chosen().reduce((a,s)=>({mins:a.mins+s.mins, price:a.price+s.price}),{mins:0,price:0});
+
+/* ---------- polaroid art (drawn, warm-toned) ---------- */
+function lashArt(kind, seed){
+  const skins = [["#e9c9b0","#c99a7c"],["#d7a98a","#a8735a"],["#c48d6c","#8a5a43"],["#efd5c0","#d4a98d"],["#b57c5d","#7b4d39"]];
+  const [a,b] = skins[seed % skins.length];
+  let g = `<defs><linearGradient id="g${seed}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient></defs><rect width="200" height="200" fill="url(#g${seed})"/>`;
+  if (kind === "tray"){
+    g = `<rect width="200" height="200" fill="#f1e6da"/>`;
+    for (let r=0;r<5;r++){ const y=36+r*32; g += `<line x1="22" y1="${y+10}" x2="178" y2="${y+10}" stroke="#d8c2a4" stroke-width="1"/>`;
+      for (let i=0;i<14;i++){ const x=28+i*11; const h=10+((i*7+r*3)%5)*2; g += `<path d="M${x} ${y+10} q2 -${h/2} 5 -${h}" stroke="#241f21" stroke-width="1.1" fill="none" stroke-linecap="round"/>`; } }
+    g += `<rect x="150" y="160" width="26" height="14" fill="#a35257" opacity=".85"/>`;
+    return `<svg viewBox="0 0 200 200" role="presentation">${g}</svg>`;
+  }
+  const cx=100, cy=kind==="brow"?118:104, w=kind==="brow"?70:78;
+  // closed lid
+  g += `<path d="M${cx-w} ${cy} Q${cx} ${cy+38} ${cx+w} ${cy}" stroke="#5b3a2c" stroke-width="2.2" fill="none" stroke-linecap="round"/>`;
+  g += `<path d="M${cx-w+6} ${cy-22} Q${cx} ${cy-44} ${cx+w-4} ${cy-18}" stroke="#7b4d39" stroke-width="1" fill="none" opacity=".45"/>`;
+  const n = kind==="volume"?46:kind==="wet"?20:32, len = kind==="volume"?34:kind==="wet"?38:28;
+  for (let i=0;i<=n;i++){
+    const t=i/n, x=(1-t)*(1-t)*(cx-w)+2*(1-t)*t*cx+t*t*(cx+w), y=(1-t)*(1-t)*cy+2*(1-t)*t*(cy+38)+t*t*cy;
+    const ang = (Math.PI/2) + (t-0.55)*1.3, L = len*(0.55+0.45*Math.sin(Math.PI*Math.min(1,t*1.15)));
+    const ex = x + Math.cos(ang)*L*0.35 + (t-0.5)*16, ey = y + Math.sin(ang)*L;
+    const sw = kind==="wet"?2.2:kind==="volume"?0.9:1.3;
+    g += `<path d="M${x.toFixed(1)} ${y.toFixed(1)} Q${(x+ex)/2+6} ${(y+ey)/2} ${ex.toFixed(1)} ${ey.toFixed(1)}" stroke="#241f21" stroke-width="${sw}" fill="none" stroke-linecap="round"/>`;
+  }
+  if (kind==="brow"){ for (let i=0;i<40;i++){ const x=50+i*2.6, y=60-Math.sin(i/40*Math.PI)*12; g+=`<line x1="${x}" y1="${y+6}" x2="${x+5}" y2="${y-4}" stroke="#3a2a22" stroke-width="1.2" stroke-linecap="round"/>`; } }
+  g += `<circle cx="${cx+w-6}" cy="${cy-30}" r="3" fill="#f1d8d3" opacity=".8"/>`;
+  return `<svg viewBox="0 0 200 200" role="presentation">${g}</svg>`;
+}
+const COLLAGE = [["classic","classic set"],["volume","volume, 12mm"],["tray","fresh trays"],["wet","wet look"],["brow","laminated brows"]];
+$("#collage").innerHTML = COLLAGE.map(([k,c],i)=>`<figure class="pola p${i+1}" style="margin:0">${lashArt(k,i)}<figcaption>${c}</figcaption></figure>`).join("");
+
+/* ---------- home ---------- */
+const artFor = {hybrid:"classic", volume:"volume", wet:"wet"};
+$("#sig").innerHTML = SERVICES.filter(s=>s.sig).map((s,i)=>`
+  <button class="sig-card" data-add="${s.id}" type="button">
+    <figure class="pola" style="margin:0">${lashArt(artFor[s.id]||"classic", i+1)}</figure>
+    <span class="from">${fmtD(s.mins)} · ${fmtP(s.price)}</span>
+    <h3>${s.name.toLowerCase()}</h3>
+    <p>${s.desc}</p>
+    <span class="link" style="font-size:var(--t-xs);letter-spacing:.18em;text-transform:uppercase">Book this look</span>
+  </button>`).join("");
+$("#sig").addEventListener("click", e => { const c = e.target.closest("[data-add]"); if(!c) return; state.bag.add(c.dataset.add); save(); refresh(); go("book"); });
+
+const today = new Date().getDay();
+$("#hours").innerHTML = [1,2,3,4,5,6,0].map(d=>`<tr class="${d===today?"today":""}"><td>${DAYL[d]}${d===today?" · today":""}</td><td>${HOURS[d]?pad(HOURS[d][0])+":00 – "+pad(HOURS[d][1])+":00":"Closed"}</td></tr>`).join("");
+
+/* ---------- services ---------- */
+const CATS = ["All", ...new Set(SERVICES.map(s=>s.cat))];
+function renderChips(){
+  $("#chips").innerHTML = CATS.map(c=>`<button class="chip" type="button" aria-pressed="${state.filter===c}" data-f="${c}">${c}</button>`).join("");
+}
+const plus = `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 1v14M1 8h14"/></svg>`;
+function renderMenu(){
+  const cats = state.filter==="All" ? CATS.slice(1) : [state.filter];
+  $("#menu").innerHTML = cats.map(c=>`<div class="cat"><h3>${c}</h3>${SERVICES.filter(s=>s.cat===c).map(s=>`
+    <div class="svc ${state.bag.has(s.id)?"on":""}">
+      <div class="svc-main"><span class="svc-name">${s.name}</span><span class="svc-desc">${s.desc}</span>
+        <span class="svc-meta"><span>${fmtD(s.mins)}</span><b>${fmtP(s.price)}</b></span></div>
+      <button class="add" type="button" data-id="${s.id}" aria-pressed="${state.bag.has(s.id)}" aria-label="${state.bag.has(s.id)?"Remove":"Add"} ${s.name}">${plus}</button>
+    </div>`).join("")}</div>`).join("");
+}
+$("#chips").addEventListener("click", e=>{ const b=e.target.closest("[data-f]"); if(!b) return; state.filter=b.dataset.f; renderChips(); renderMenu(); });
+$("#menu").addEventListener("click", e=>{ const b=e.target.closest("[data-id]"); if(!b) return; toggle(b.dataset.id); });
+function toggle(id){
+  const s = SERVICES.find(x=>x.id===id);
+  if (state.bag.has(id)){ state.bag.delete(id); toast(s.name+" removed"); } else { state.bag.add(id); toast(s.name+" added to your booking"); bump(); }
+  state.time = null; save(); refresh();
+}
+function bump(){ const b=$("#bag"); b.classList.remove("bump"); void b.offsetWidth; b.classList.add("bump"); }
+
+/* ---------- booking ---------- */
+const STEPS = ["Services","Date & time","Your details","Review"];
+function canReach(i){
+  if (i<=0) return true;
+  if (state.bag.size===0) return false;
+  if (i>=2 && !(state.date && state.time)) return false;
+  if (i>=3 && !validInfo(false)) return false;
+  return true;
+}
+function renderSteps(){
+  $("#steps").innerHTML = STEPS.map((s,i)=>`<li><button type="button" data-step="${i}" ${i===state.step?'aria-current="step"':""} ${canReach(i)?"":"disabled"}><b>${i+1}</b>${s}</button></li>`).join("");
+}
+$("#steps").addEventListener("click", e=>{ const b=e.target.closest("[data-step]"); if(!b||b.disabled) return; state.step=+b.dataset.step; renderBook(); });
+
+function daysAhead(){
+  const out=[], d=new Date(); d.setHours(0,0,0,0);
+  for (let i=1;i<=21;i++){ const x=new Date(d); x.setDate(d.getDate()+i); out.push(x); }
+  return out;
+}
+const key = d => d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());
+function slots(date){
+  const h = HOURS[date.getDay()]; if(!h) return [];
+  const need = Math.max(30, totals().mins), out=[];
+  for (let m=h[0]*60; m+need<=h[1]*60; m+=30) out.push(pad(Math.floor(m/60))+":"+pad(m%60));
+  return out;
+}
+const longDate = d => `${DAYL[d.getDay()]} ${d.getDate()} ${MON[d.getMonth()]}`;
+
+function panelServices(){
+  let html = `<h3>choose your services</h3><p class="lede">Select everything you'd like in one visit. Your time and total update as you go.</p><div class="pick">`;
+  CATS.slice(1).forEach(c=>{
+    html += `<div class="pick-group">${c}</div>`;
+    SERVICES.filter(s=>s.cat===c).forEach(s=>{ html += `<label><input type="checkbox" id="pk-${s.id}" data-id="${s.id}" ${state.bag.has(s.id)?"checked":""}><span>${s.name}<small>${fmtD(s.mins)}</small></span><span class="price">${fmtP(s.price)}</span></label>`; });
+  });
+  html += `</div><div class="actions"><span></span><button class="btn" type="button" data-next ${state.bag.size?"":"disabled"}>Choose a time</button></div>`;
+  return html;
+}
+function panelTime(){
+  const ds = daysAhead();
+  if (!state.date){ const first = ds.find(d=>HOURS[d.getDay()]); state.date = key(first); }
+  const sel = ds.find(d=>key(d)===state.date) || ds[0];
+  const list = slots(sel);
+  let html = `<h3>pick a day & time</h3><p class="lede">Your visit needs about ${fmtD(totals().mins)}. Choose your preferred start time.</p>`;
+  html += `<div class="days" role="group" aria-label="Day">${ds.map(d=>`<button class="day" type="button" data-date="${key(d)}" aria-pressed="${key(d)===state.date}" ${HOURS[d.getDay()]?"":"disabled"} aria-label="${longDate(d)}${HOURS[d.getDay()]?"":", closed"}"><span>${DAYN[d.getDay()]}</span><strong>${d.getDate()}</strong><span>${MON[d.getMonth()]}</span></button>`).join("")}</div>`;
+  html += list.length ? `<div class="times" role="group" aria-label="Start time">${list.map(t=>`<button class="time" type="button" data-time="${t}" aria-pressed="${state.time===t}">${t}</button>`).join("")}</div>`
+                      : `<p class="note">This visit is too long to fit on ${DAYL[sel.getDay()]}. Try a weekday.</p>`;
+  html += `<p class="note">Fresha shows live availability and holds your exact slot in the final step.</p>`;
+  html += `<div class="actions"><button class="link" type="button" data-back>Back to services</button><button class="btn" type="button" data-next ${state.time?"":"disabled"}>Add your details</button></div>`;
+  return html;
+}
+function panelInfo(){
+  const i = state.info, esc = v => String(v).replace(/"/g,"&quot;").replace(/</g,"&lt;");
+  return `<h3>your details</h3><p class="lede">So we can recognise you when you confirm on Fresha.</p>
+  <form class="form" id="infoForm" novalidate>
+    <div class="field"><label for="f-name">Full name</label><input id="f-name" name="name" autocomplete="name" value="${esc(i.name)}"><span class="err" id="e-name"></span></div>
+    <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" value="${esc(i.phone)}"><span class="err" id="e-phone"></span></div>
+    <div class="field full"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" value="${esc(i.email)}"><span class="err" id="e-email"></span></div>
+    <div class="field full"><label for="f-notes">Notes for your artist (optional)</label><textarea id="f-notes" name="notes" placeholder="Allergies, sensitive eyes, the look you're hoping for">${esc(i.notes)}</textarea></div>
+    <label class="check full" style="grid-column:1/-1"><input type="checkbox" id="f-first" name="first" ${i.first?"checked":""}><span>This is my first visit to Luxury Feel</span></label>
+  </form>
+  <div class="actions"><button class="link" type="button" data-back>Back to date & time</button><button class="btn" type="button" data-next>Review booking</button></div>`;
+}
+function panelReview(){
+  const d = daysAhead().find(x=>key(x)===state.date), t = totals(), i = state.info;
+  const esc = v => String(v).replace(/[&<>]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+  return `<h3>review & confirm</h3><p class="lede">Check everything, then continue to Fresha to secure your slot. Your booking is confirmed once Fresha sends your confirmation.</p>
+  <dl class="review" style="margin:0">
+    <div><dt>Services</dt><dd>${chosen().map(s=>s.name).join(", ")}</dd></div>
+    <div><dt>When</dt><dd>${longDate(d)} at ${state.time} · about ${fmtD(t.mins)}</dd></div>
+    <div><dt>Name</dt><dd>${esc(i.name)}</dd></div>
+    <div><dt>Contact</dt><dd>${esc(i.phone)}<br>${esc(i.email)}</dd></div>
+    ${i.notes?`<div><dt>Notes</dt><dd>${esc(i.notes)}</dd></div>`:""}
+    <div><dt>Estimated total</dt><dd>${fmtP(t.price)}</dd></div>
+  </dl>
+  <div class="actions"><button class="link" type="button" data-back>Edit details</button>
+    <div style="display:flex;gap:var(--s1);flex-wrap:wrap"><button class="btn ghost" type="button" id="copySum">Copy summary</button><a class="btn" href="${FRESHA_URL}" target="_blank" rel="noopener">Confirm on Fresha</a></div></div>`;
+}
+function renderSummary(){
+  const t = totals(), c = chosen();
+  const d = state.date && daysAhead().find(x=>key(x)===state.date);
+  $("#summary").innerHTML = `<h4>Your booking</h4>` + (c.length
+    ? `<ul>${c.map(s=>`<li><span>${s.name}</span><span>${fmtP(s.price)}</span></li>`).join("")}</ul>
+       ${state.time && d ? `<p class="when">${longDate(d)} · ${state.time}</p>` : `<p class="when">No time chosen yet</p>`}
+       <div class="tot"><span>${fmtD(t.mins)}</span><span>${fmtP(t.price)}</span></div>`
+    : `<p class="empty">Nothing added yet. Choose a service to begin.</p><a class="link" href="#services">Browse services</a>`);
+}
+function renderBook(){
+  if (!canReach(state.step)) state.step = [3,2,1,0].find(canReach);
+  renderSteps();
+  $("#panel").innerHTML = [panelServices,panelTime,panelInfo,panelReview][state.step]();
+  renderSummary();
+}
+function validInfo(show){
+  const i = state.info, errs = {};
+  if (i.name.trim().length < 2) errs.name = "Enter your full name.";
+  if (i.phone.replace(/\D/g,"").length < 7) errs.phone = "Enter a phone number with at least 7 digits.";
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(i.email.trim())) errs.email = "Enter an email like name@example.com.";
+  if (show) ["name","phone","email"].forEach(k=>{ const el=$("#e-"+k); if(el) el.textContent = errs[k]||""; });
+  return !Object.keys(errs).length;
+}
+$("#panel").addEventListener("change", e=>{
+  const t = e.target;
+  if (t.matches(".pick input")){ t.checked ? state.bag.add(t.dataset.id) : state.bag.delete(t.dataset.id); state.time=null; save(); refresh(); }
+  if (t.id==="f-first"){ state.info.first = t.checked; save(); }
+});
+$("#panel").addEventListener("input", e=>{
+  const t = e.target; if (t.closest("#infoForm") && t.name && t.name!=="first"){ state.info[t.name] = t.value; save(); renderSteps(); }
+});
+$("#panel").addEventListener("click", e=>{
+  const t = e.target;
+  const day = t.closest("[data-date]"); if (day){ state.date = day.dataset.date; state.time = null; renderBook(); return; }
+  const tm = t.closest("[data-time]"); if (tm){ state.time = tm.dataset.time; renderBook(); return; }
+  if (t.closest("[data-back]")){ state.step = Math.max(0, state.step-1); renderBook(); scrollTop(); return; }
+  if (t.closest("[data-next]")){
+    if (state.step===2 && !validInfo(true)){ const f=$(".err:not(:empty)"); f && f.previousElementSibling.focus(); return; }
+    state.step = Math.min(3, state.step+1); renderBook(); scrollTop(); return;
+  }
+  if (t.id==="copySum"){
+    const d = daysAhead().find(x=>key(x)===state.date);
+    const txt = `Luxury Feel booking\n${chosen().map(s=>"• "+s.name).join("\n")}\n${longDate(d)} at ${state.time}\nEstimated total: ${fmtP(totals().price)}`;
+    const done = () => toast("Summary copied");
+    try { navigator.clipboard.writeText(txt).then(done, ()=>toast("Copy isn't available here. Select the details above instead.")); } catch(err){ toast("Copy isn't available here. Select the details above instead."); }
+  }
+});
+
+/* ---------- shared refresh ---------- */
+function refresh(){
+  const n = state.bag.size, t = totals();
+  $("#bagN").textContent = n;
+  $("#bag").setAttribute("aria-label", `Your booking, ${n} service${n===1?"":"s"}`);
+  if (!$('[data-view="services"]').hidden){ renderMenu(); }
+  if (!$('[data-view="book"]').hidden){ renderBook(); }
+  const showBar = n>0 && current!=="book";
+  $("#bar").classList.toggle("show", showBar);
+  document.body.classList.toggle("has-bar", showBar);
+  $("#barSum").innerHTML = `<span>${n} service${n===1?"":"s"}</span>${fmtD(t.mins)} · ${fmtP(t.price)}`;
+}
+let tt; function toast(m){ const el=$("#toast"); el.textContent=m; el.classList.add("show"); clearTimeout(tt); tt=setTimeout(()=>el.classList.remove("show"),2200); }
+
+/* ---------- routing ---------- */
+const VIEWS = ["home","services","book","manage"];
+let current = "home";
+function scrollTop(){ window.scrollTo({top:0, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto":"smooth"}); }
+function go(v, push=true){
+  if (!VIEWS.includes(v)) v = "home";
+  current = v;
+  $$(".view").forEach(s=>s.hidden = s.dataset.view!==v);
+  $$("[data-nav]").forEach(a=>a.dataset.nav===v ? a.setAttribute("aria-current","page") : a.removeAttribute("aria-current"));
+  if (v==="services"){ renderChips(); renderMenu(); }
+  if (v==="book"){ if(state.bag.size && state.step===0 && location.hash!=="#book") {} renderBook(); }
+  closeDrawer();
+  if (push && location.hash !== "#"+v){ try{ history.pushState(null,"","#"+v); }catch(e){} }
+  window.scrollTo(0,0);
+  refresh();
+}
+document.addEventListener("click", e=>{
+  const a = e.target.closest('a[href^="#"]'); if (!a) return;
+  const v = a.getAttribute("href").slice(1); if (!VIEWS.includes(v)) return;
+  e.preventDefault(); go(v);
+});
+window.addEventListener("popstate", ()=>go(location.hash.slice(1)||"home", false));
+window.addEventListener("hashchange", ()=>go(location.hash.slice(1)||"home", false));
+
+/* ---------- drawer + header ---------- */
+const burger = $("#burger"), drawer = $("#drawer");
+function closeDrawer(){ drawer.classList.remove("open"); burger.setAttribute("aria-expanded","false"); burger.setAttribute("aria-label","Open menu"); }
+burger.addEventListener("click", ()=>{ const o = !drawer.classList.contains("open"); drawer.classList.toggle("open", o); burger.setAttribute("aria-expanded", o); burger.setAttribute("aria-label", o?"Close menu":"Open menu"); });
+document.addEventListener("keydown", e=>{ if(e.key==="Escape") closeDrawer(); });
+window.addEventListener("scroll", ()=>$("#hdr").classList.toggle("scrolled", scrollY>8), {passive:true});
+
+go(location.hash.slice(1)||"home", false);
+</script>
+
+</body></html>

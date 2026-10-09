@@ -51,6 +51,19 @@ Pour la production (`npm run build`), démarre l'API d'abord : les pages récup�
 
 Les demandes sont écrites dans `backend/data/bookings.json`. La réservation reste confirmée par Fresha, comme dans le site d'origine.
 
+## Déployer sur Netlify
+
+Deux sites Netlify, tous deux reliés à ce même repo GitHub. Déploie le backend en premier.
+
+1. **Backend** : Add new site → Import from GitHub → ce repo. **Base directory : `backend`**. Le reste est lu dans `backend/netlify.toml`.
+   L'API Express tourne dans une Netlify Function. Les demandes de réservation sont stockées dans Netlify Blobs.
+   Variables d'environnement facultatives : `FRESHA_URL`, `CURRENCY`, `ADMIN_TOKEN`.
+   Vérifie `https://<site-backend>.netlify.app/api/health`.
+2. **Frontend** : Add new site → même repo. **Base directory : `frontend`**.
+   Variable d'environnement obligatoire : `BACKEND_URL = https://<site-backend>.netlify.app` (sans `/` final).
+
+Pour consulter les demandes : `GET https://<site-backend>.netlify.app/api/bookings` avec l'en-tête `Authorization: Bearer <ADMIN_TOKEN>`.
+
 ## Où modifier quoi
 
 - Menu, prix, horaires : `backend/src/data/catalog.js`
