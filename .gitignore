@@ -10,3 +10,7 @@ backend/data/
 
 # outils locaux
 .claude/
+
+# fichiers d'origine, hors des deux projets
+Luxury Feel.html
+LOGO_LUXURY_FEEL.jpeg
