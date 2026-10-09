@@ -1,0 +1,12 @@
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+
+# secrets et données locales
+.env
+.env*.local
+backend/data/
+
+# outils locaux
+.claude/
