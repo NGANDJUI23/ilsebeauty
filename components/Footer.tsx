@@ -33,7 +33,7 @@ export function Footer() {
         </div>
         <div className="copy">
           <span>© {new Date().getFullYear()} ILSEBEAUTY. All rights reserved.</span>
-          <span>Website content and photography may not be reused without permission.</span>
+          <span>Homepage photos from <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a>.</span>
         </div>
       </div>
     </footer>
