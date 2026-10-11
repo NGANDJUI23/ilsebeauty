@@ -2,7 +2,7 @@
 :root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}
 
 /* ILSEBEAUTY: rose ground with chocolate-brown bands, ink copy, one signature pink, square corners.
-   Headlines: Libre Baskerville regular, lowercase. Copy: Work Sans Light 300. */
+   Headlines: Libre Baskerville regular, sentence case. Copy: Work Sans Light 300. */
 :root{
   --cream:#f9e3ec;      /* rose page ground (ink 15:1, pink-deep 5.9:1) */
   --ink:#1a1a1a;        /* all copy, icons, control borders (15.8:1 on cream) */
@@ -33,7 +33,7 @@ h1,h2,h3{font-weight:300;margin:0;text-wrap:balance}
 p{margin:0}
 .wrap{padding-inline:var(--gutter);max-width:1240px;margin-inline:auto}
 .eyebrow{font-size:var(--t-xs);letter-spacing:.22em;text-transform:uppercase;font-weight:400;color:var(--ink)}
-.h2{font-family:var(--font-serif);font-weight:400;font-size:var(--t-xl);line-height:1.2;color:var(--pink-deep);text-transform:lowercase}
+.h2{font-family:var(--font-serif);font-weight:400;font-size:var(--t-xl);line-height:1.2;color:var(--pink-deep)}
 .lede{color:var(--ink);max-width:58ch}
 .sparkles{display:block;letter-spacing:2px;line-height:1;margin-bottom:var(--s1)}
 .sparkles small{font-size:10px;vertical-align:2px}
@@ -77,7 +77,7 @@ footer .logo-link{display:inline-block;background:var(--cream);padding:14px 18px
 /* Mobile drawer */
 .drawer{position:fixed;inset:0;z-index:19;background:var(--cream);padding:calc(130px + env(safe-area-inset-top,0px)) var(--gutter) var(--s6);display:flex;flex-direction:column;gap:var(--s3);transform:translateY(-100%);transition:transform .35s cubic-bezier(.2,.7,.2,1);visibility:hidden}
 .drawer.open{transform:none;visibility:visible}
-.drawer a{font-family:var(--font-serif);font-size:28px;text-decoration:none;color:var(--pink-deep);text-transform:lowercase;border-bottom:1px solid var(--line);padding-bottom:var(--s2)}
+.drawer a{font-family:var(--font-serif);font-size:28px;text-decoration:none;color:var(--pink-deep);border-bottom:1px solid var(--line);padding-bottom:var(--s2)}
 .drawer .eyebrow{margin-top:auto}
 
 /* Views */
@@ -96,7 +96,7 @@ main{min-height:60vh}
 .carousel::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
   background:linear-gradient(180deg,rgba(95,74,64,.30) 0%,rgba(95,74,64,0) 35%,rgba(60,44,37,.55) 70%,rgba(60,44,37,.85) 100%)}
 .carousel-copy{position:absolute;left:0;right:0;bottom:150px;z-index:3;display:grid;gap:var(--s2);margin-inline:auto}
-.carousel-copy h1{font-family:var(--font-serif);font-weight:400;font-size:var(--t-hero);line-height:1.08;text-transform:lowercase;max-width:14ch;color:#fff;text-shadow:0 2px 24px rgba(60,44,37,.35);animation:rise .9s cubic-bezier(.2,.7,.2,1) both .1s}
+.carousel-copy h1{font-family:var(--font-serif);font-weight:400;font-size:var(--t-hero);line-height:1.08;max-width:14ch;color:#fff;text-shadow:0 2px 24px rgba(60,44,37,.35);animation:rise .9s cubic-bezier(.2,.7,.2,1) both .1s}
 .carousel-eyebrow{font-size:var(--t-xs);letter-spacing:.3em;text-transform:uppercase;font-weight:400;color:var(--cream);animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
 .carousel-copy .hero-cta{margin-top:var(--s1);animation:rise .9s cubic-bezier(.2,.7,.2,1) both .2s}
 @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
@@ -152,7 +152,7 @@ main{min-height:60vh}
 .sig-card{display:grid;gap:var(--s2);text-decoration:none;cursor:pointer;background:none;border:0;padding:0;text-align:left}
 
 .sig-card:hover .pola{transform:rotate(-1.5deg)}
-.sig-card h3{font-family:var(--font-serif);font-weight:400;font-size:var(--t-lg);color:var(--pink-deep);text-transform:lowercase}
+.sig-card h3{font-family:var(--font-serif);font-weight:400;font-size:var(--t-lg);color:var(--pink-deep)}
 .sig-card p{font-size:var(--t-sm);color:var(--ink)}
 .sig-card .from{font-size:var(--t-xs);letter-spacing:.18em;text-transform:uppercase;font-weight:400;font-variant-numeric:tabular-nums}
 
@@ -217,7 +217,7 @@ body.has-bar footer{padding-bottom:110px}
 .steps button:disabled{opacity:.45;cursor:not-allowed}
 .book{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--s6)}
 @media (min-width:960px){.book{grid-template-columns:minmax(0,1fr) 340px}}
-.panel h3{font-family:var(--font-serif);font-weight:400;font-size:var(--t-lg);color:var(--pink-deep);text-transform:lowercase;margin-bottom:var(--s1)}
+.panel h3{font-family:var(--font-serif);font-weight:400;font-size:var(--t-lg);color:var(--pink-deep);margin-bottom:var(--s1)}
 .panel > p.lede{margin-bottom:var(--s3);font-size:var(--t-sm)}
 .pick{display:grid;gap:0}
 .pick label{display:grid;grid-template-columns:22px 1fr auto;gap:var(--s2);align-items:center;padding:14px 0;border-bottom:1px solid var(--line);cursor:pointer;font-size:var(--t-md)}
@@ -277,7 +277,7 @@ body.has-bar footer{padding-bottom:110px}
 .cards3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:var(--s3)}
 .mcard{border:1px solid var(--ink);padding:var(--s3);display:grid;gap:var(--s2);align-content:start}
 .mcard svg{width:28px;height:28px;color:var(--ink)}
-.mcard h3{font-family:var(--font-serif);font-weight:400;font-size:var(--t-lg);color:var(--pink-deep);text-transform:lowercase}
+.mcard h3{font-family:var(--font-serif);font-weight:400;font-size:var(--t-lg);color:var(--pink-deep)}
 .mcard p{font-size:var(--t-sm);color:var(--ink)}
 .mcard .btn{justify-self:start;margin-top:var(--s1)}
 .policy{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:var(--s4) var(--s6);margin:0;padding:0;list-style:none}

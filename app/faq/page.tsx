@@ -11,7 +11,7 @@ export default function FaqPage() {
         <div className="sec-head">
           <div>
             <span className="eyebrow">Questions</span>
-            <h1 className="h2" style={{ fontSize: "var(--t-hero)", lineHeight: 1 }}>faq</h1>
+            <h1 className="h2" style={{ fontSize: "var(--t-hero)", lineHeight: 1 }}>FAQ</h1>
           </div>
           <p className="lede" style={{ maxWidth: "44ch", fontSize: "var(--t-sm)" }}>
             Bookings, changes and aftercare. If your question isn&apos;t here, message us on Fresha.

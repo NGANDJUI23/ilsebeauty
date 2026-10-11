@@ -11,7 +11,7 @@ export default function PoliciesPage() {
         <div className="sec-head">
           <div>
             <span className="eyebrow">Before your visit</span>
-            <h1 className="h2" style={{ fontSize: "var(--t-hero)", lineHeight: 1 }}>policies</h1>
+            <h1 className="h2" style={{ fontSize: "var(--t-hero)", lineHeight: 1 }}>Policies</h1>
           </div>
           <p className="lede" style={{ maxWidth: "44ch", fontSize: "var(--t-sm)" }}>
             A few simple rules so every appointment starts on time and your set lasts as long as possible.

@@ -43,7 +43,7 @@ export default function HomePage() {
         <div className="sec-head">
           <div>
             <span className="eyebrow">Signature sets</span>
-            <h2 className="h2">the most requested looks</h2>
+            <h2 className="h2">The most requested looks</h2>
           </div>
           <Link className="link" href="/services">See the full menu</Link>
         </div>
@@ -55,7 +55,7 @@ export default function HomePage() {
           <div className="sec-head">
             <div>
               <span className="eyebrow">How booking works</span>
-              <h2 className="h2">three steps to your chair</h2>
+              <h2 className="h2">Three steps to your chair</h2>
             </div>
           </div>
           <ol className="how">
@@ -71,7 +71,7 @@ export default function HomePage() {
           <div className="studio">
             <div style={{ display: "grid", gap: "var(--s2)" }}>
               <span className="eyebrow">The studio</span>
-              <h2 className="h2">by appointment only</h2>
+              <h2 className="h2">By appointment only</h2>
               <p className="lede">
                 One client at a time, a quiet room, fresh linens and a warm blanket. Arrive with clean lashes and no eye makeup so we can start right away.
               </p>
