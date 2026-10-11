@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { SHAPES, useScrollWave, wavePath } from "./Wave";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 /* Photos Unsplash (licence Unsplash : usage commercial gratuit, sans autorisation).
@@ -26,6 +27,9 @@ export function HeroCarousel() {
   const [held, setHeld] = useState(false); // survol des commandes ou navigation au clavier
   const touchX = useRef<number | null>(null);
   const track = useRef<HTMLDivElement>(null);
+  const waveSvg = useRef<SVGSVGElement>(null);
+  const wavePathEl = useRef<SVGPathElement>(null);
+  useScrollWave(waveSvg, wavePathEl, SHAPES.hero);
 
   // Parallaxe : les photos défilent plus lentement que la page
   useEffect(() => {
@@ -148,8 +152,8 @@ export function HeroCarousel() {
           </button>
         </div>
       </div>
-      <svg className="carousel-wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-        <path d="M0,40 C260,92 540,88 780,50 C1020,12 1240,10 1440,52 L1440,90 L0,90 Z" />
+      <svg ref={waveSvg} className="carousel-wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <path ref={wavePathEl} d={wavePath(SHAPES.hero, 0.5)} />
       </svg>
     </section>
   );
