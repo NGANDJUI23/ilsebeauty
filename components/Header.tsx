@@ -25,7 +25,6 @@ export function Header() {
   return (
     <>
       <header className="hdr">
-        <span className="scroll-progress" aria-hidden="true" />
         <div className="wrap hdr-in">
           <button
             className="burger"
@@ -58,10 +57,10 @@ export function Header() {
       </header>
 
       <nav className={"drawer" + (open ? " open" : "")} id="drawer" aria-label="Menu">
-        <Link href="/">Home</Link>
-        <Link href="/services">Our services</Link>
-        <Link href="/book">Book an appointment</Link>
-        <Link href="/manage">Manage bookings</Link>
+        <Link href="/">home</Link>
+        <Link href="/services">our services</Link>
+        <Link href="/book">book an appointment</Link>
+        <Link href="/manage">manage bookings</Link>
         <span className="eyebrow">Bookings powered by Fresha</span>
       </nav>
     </>

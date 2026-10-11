@@ -1,8 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { SHAPES, useScrollWave, wavePath } from "./Wave";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 
 /* Photos Unsplash (licence Unsplash : usage commercial gratuit, sans autorisation).
    Remplace-les par tes propres photos dès que tu en as : seul l'identifiant change. */
@@ -26,31 +25,6 @@ export function HeroCarousel() {
   const [paused, setPaused] = useState(false); // choix de l'utilisateur (bouton)
   const [held, setHeld] = useState(false); // survol des commandes ou navigation au clavier
   const touchX = useRef<number | null>(null);
-  const track = useRef<HTMLDivElement>(null);
-  const waveSvg = useRef<SVGSVGElement>(null);
-  const wavePathEl = useRef<SVGPathElement>(null);
-  useScrollWave(waveSvg, wavePathEl, SHAPES.hero);
-
-  // Parallaxe : les photos défilent plus lentement que la page
-  useEffect(() => {
-    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    let frame = 0;
-    const onScroll = () => {
-      cancelAnimationFrame(frame);
-      frame = requestAnimationFrame(() => {
-        const el = track.current;
-        if (!el) return;
-        const y = Math.min(window.scrollY, el.offsetHeight);
-        el.style.transform = `translate3d(0, ${y * 0.35}px, 0)`;
-      });
-    };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => {
-      cancelAnimationFrame(frame);
-      window.removeEventListener("scroll", onScroll);
-    };
-  }, []);
   const n = SLIDES.length;
 
   const wrapIndex = useCallback((i: number) => ((i % n) + n) % n, [n]);
@@ -75,7 +49,7 @@ export function HeroCarousel() {
         touchX.current = null;
       }}
     >
-      <div className="carousel-track" ref={track} aria-live={stopped ? "polite" : "off"}>
+      <div className="carousel-track" aria-live={stopped ? "polite" : "off"}>
         {SLIDES.map((s, i) => (
           <div
             key={s.id}
@@ -100,7 +74,7 @@ export function HeroCarousel() {
 
       <div className="carousel-copy wrap">
         <span className="carousel-eyebrow">Lashes · Brows · Hair</span>
-        <h1>Shine like the gem that you are</h1>
+        <h1>shine like the gem that you are</h1>
         <div className="hero-cta">
           <Link className="btn btn-light" href="/book">Book an appointment</Link>
           <Link className="btn btn-outline-light" href="/services">Our services</Link>
@@ -152,9 +126,6 @@ export function HeroCarousel() {
           </button>
         </div>
       </div>
-      <svg ref={waveSvg} className="carousel-wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-        <path ref={wavePathEl} d={wavePath(SHAPES.hero, 0.5)} />
-      </svg>
     </section>
   );
 }

@@ -6,7 +6,6 @@ import { BookingProvider } from "@/components/BookingProvider";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { BookingBar } from "@/components/BookingBar";
-import { ScrollReveal } from "@/components/ScrollReveal";
 
 const workSans = Work_Sans({
   subsets: ["latin"],
@@ -47,11 +46,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <main id="main">{children}</main>
             <BookingBar />
             <Footer />
-            <ScrollReveal />
           </BookingProvider>
         ) : (
           <main className="wrap sec">
-            <h1 className="h2">We&apos;ll be right back</h1>
+            <h1 className="h2">we&apos;ll be right back</h1>
             <p className="lede" style={{ marginTop: "var(--s2)" }}>
               The booking service is temporarily unavailable. Please try again in a few minutes.
             </p>
