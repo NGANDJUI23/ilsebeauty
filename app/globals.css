@@ -308,9 +308,7 @@ body.has-bar footer{padding-bottom:110px}
 .faq details p{padding-bottom:var(--s3);font-size:var(--t-sm);color:var(--ink);max-width:64ch}
 
 /* Footer */
-.view > :last-child{padding-bottom:clamp(64px,8vw,120px)}
-footer{position:relative;background:var(--brand-pink);color:var(--ink);padding-block:var(--s6) var(--s4)}
-.footer-wave{position:absolute;left:0;right:0;bottom:calc(100% - 1px);width:100%;height:clamp(40px,6vw,90px);display:block;fill:var(--brand-pink);pointer-events:none}
+footer{background:var(--brand-pink);color:var(--ink);padding-block:var(--s6) var(--s4)}
 .f-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:var(--s4)}
 
 
