@@ -7,11 +7,12 @@
   --cream:#f9e3ec;      /* rose page ground (ink 15:1, pink-deep 5.9:1) */
   --ink:#1a1a1a;        /* all copy, icons, control borders (15.8:1 on cream) */
   --pink:#f864c4;       /* signature pink: fills, bars, marks. Never text on cream */
-  --pink-deep:#a31571;  /* pink wording: headlines, prices in focus (6.6:1 on cream) */
+  --pink-deep:#f770b7;  /* flyer pink: all pink wording (headlines, prices, numbers) */
+  --error:#a31571;      /* form errors only, kept dark enough to read */
   --blush:#f2c4d6;      /* deeper rose: bands, selected states, hairlines. Never text */
-  --brown:#4b2e24;      /* chocolate bands, footer, booking bar */
-  --brown-2:#6b4335;    /* lighter brown: hover on brown */
-  --on-brown:#f9e3ec;   /* copy on brown (10:1) */
+  --brown:#5f4a40;      /* flyer brown: bands, footer, booking bar (on-brown copy 6.8:1) */
+  --brown-2:#7a6156;    /* lighter flyer brown: hover on brown */
+  --on-brown:#f9e3ec;   /* copy on brown */
   --frame:#e8e8e4;      /* polaroid frames only, not a UI fill */
   --line:var(--blush);  /* decorative dividers */
   --font:var(--font-work-sans), "Work Sans", system-ui, sans-serif;
@@ -39,7 +40,7 @@ p{margin:0}
 
 /* Buttons: square, tracked caps */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 26px;border:1px solid var(--ink);background:var(--ink);color:var(--cream);font-size:var(--t-xs);letter-spacing:.2em;text-transform:uppercase;font-weight:400;text-decoration:none;cursor:pointer;border-radius:0;transition:background .2s,color .2s,border-color .2s}
-.btn:hover{background:var(--pink-deep);border-color:var(--pink-deep)}
+.btn:hover{background:var(--pink-deep);border-color:var(--pink-deep);color:var(--ink)}
 .btn.ghost{background:transparent;color:var(--ink)}
 .btn.ghost:hover{background:var(--ink);color:var(--cream)}
 .btn[disabled]{opacity:.35;cursor:not-allowed}
@@ -58,7 +59,7 @@ p{margin:0}
 .logo-mono{display:block;height:64px;width:auto}
 .logo-full{display:block;height:120px;width:auto}
 footer .logo-link{display:inline-block;background:var(--cream);padding:14px 18px;justify-self:start}
-.nav-l,.nav-r{display:none;align-items:center;gap:var(--s4)}
+.nav-l,.nav-r{display:none;align-items:center;gap:var(--s3)}
 .nav-l a,.nav-r a.nl{font-size:var(--t-xs);letter-spacing:.2em;text-transform:uppercase;font-weight:400;text-decoration:none;padding-block:6px;border-bottom:1px solid transparent}
 .nav-l a[aria-current="page"],.nav-r a.nl[aria-current="page"]{border-bottom-color:var(--pink)}
 .nav-l a:hover,.nav-r a.nl:hover{border-bottom-color:var(--ink)}
@@ -69,7 +70,7 @@ footer .logo-link{display:inline-block;background:var(--cream);padding:14px 18px
 .bag.bump img{animation:bump .4s ease}
 @keyframes bump{40%{transform:scale(1.18)}}
 .nav-r .btn{min-height:40px;padding:0 18px}
-@media (min-width:900px){
+@media (min-width:1100px){
   .burger{display:none}
   .nav-l,.nav-r{display:flex}
 }
@@ -93,9 +94,9 @@ main{min-height:60vh}
 .slide img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.12);transition:transform 7s ease-out}
 .slide.is-active img{transform:scale(1)}
 .carousel::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
-  background:linear-gradient(180deg,rgba(75,46,36,.30) 0%,rgba(75,46,36,0) 35%,rgba(43,25,19,.55) 70%,rgba(43,25,19,.85) 100%)}
+  background:linear-gradient(180deg,rgba(95,74,64,.30) 0%,rgba(95,74,64,0) 35%,rgba(60,44,37,.55) 70%,rgba(60,44,37,.85) 100%)}
 .carousel-copy{position:absolute;left:0;right:0;bottom:150px;z-index:3;display:grid;gap:var(--s2);margin-inline:auto}
-.carousel-copy h1{font-family:var(--font-serif);font-weight:400;font-size:var(--t-hero);line-height:1.08;text-transform:lowercase;max-width:14ch;color:#fff;text-shadow:0 2px 24px rgba(43,25,19,.35);animation:rise .9s cubic-bezier(.2,.7,.2,1) both .1s}
+.carousel-copy h1{font-family:var(--font-serif);font-weight:400;font-size:var(--t-hero);line-height:1.08;text-transform:lowercase;max-width:14ch;color:#fff;text-shadow:0 2px 24px rgba(60,44,37,.35);animation:rise .9s cubic-bezier(.2,.7,.2,1) both .1s}
 .carousel-eyebrow{font-size:var(--t-xs);letter-spacing:.3em;text-transform:uppercase;font-weight:400;color:var(--cream);animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
 .carousel-copy .hero-cta{margin-top:var(--s1);animation:rise .9s cubic-bezier(.2,.7,.2,1) both .2s}
 @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
@@ -114,7 +115,7 @@ main{min-height:60vh}
 .dot.is-active span::after{animation:fill linear forwards;animation-duration:inherit;animation-play-state:inherit}
 @keyframes fill{to{transform:scaleX(1)}}
 .carousel-ctrl{display:flex;gap:6px}
-.carousel-ctrl button{width:44px;height:44px;display:grid;place-items:center;border:1px solid rgba(249,227,236,.6);background:rgba(43,25,19,.25);color:#fff;cursor:pointer;backdrop-filter:blur(6px);transition:background .2s,border-color .2s}
+.carousel-ctrl button{width:44px;height:44px;display:grid;place-items:center;border:1px solid rgba(249,227,236,.6);background:rgba(60,44,37,.25);color:#fff;cursor:pointer;backdrop-filter:blur(6px);transition:background .2s,border-color .2s}
 .carousel-ctrl button:hover{background:var(--cream);color:var(--ink);border-color:var(--cream)}
 .carousel-ctrl svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .carousel-ctrl button[aria-label="Play slideshow"] svg{fill:currentColor;stroke:none}
@@ -131,9 +132,15 @@ main{min-height:60vh}
 .pola svg{display:block;width:100%;height:auto;aspect-ratio:1}
 .hero-cta{display:flex;flex-wrap:wrap;gap:var(--s2);align-items:center;margin-top:var(--s4)}
 
-.intro{padding-block:var(--s6)}
-.intro p{max-width:58ch;font-size:18px;line-height:25px}
+.intro{padding-block:var(--s6);display:grid;grid-template-columns:minmax(0,1fr);gap:var(--s4);align-items:center}
+@media (min-width:800px){.intro{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:var(--s6)}}
+.intro p{max-width:58ch;font-size:18px;line-height:28px}
 .intro em{font-style:italic}
+.intro-photo{margin:0;aspect-ratio:4/5;max-height:560px;overflow:hidden;background:var(--blush)}
+.intro-photo img{width:100%;height:100%;object-fit:cover;display:block}
+/* ILSEBEAUTY comme sur le logo : capitales serif espacées, ILSE en noir, BEAUTY en rose */
+.wordmark{font-family:var(--font-serif);font-style:normal;font-weight:400;text-transform:uppercase;letter-spacing:.16em;font-size:.92em;color:var(--ink);white-space:nowrap}
+.wordmark span{color:var(--pink-deep)}
 
 .sec{padding-block:var(--s6) var(--s8)}
 .sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:var(--s2);margin-bottom:var(--s4)}
@@ -188,7 +195,7 @@ main{min-height:60vh}
 .add{width:48px;height:48px;border:1px solid var(--ink);background:transparent;cursor:pointer;display:grid;place-items:center;border-radius:0;transition:background .2s,color .2s}
 .add svg{width:16px;height:16px;transition:transform .25s}
 .add:hover{background:var(--ink);color:var(--cream)}
-.add[aria-pressed="true"]{background:var(--pink-deep);border-color:var(--pink-deep);color:var(--cream)}
+.add[aria-pressed="true"]{background:var(--pink-deep);border-color:var(--pink-deep);color:var(--ink)}
 .add[aria-pressed="true"] svg{transform:rotate(45deg)}
 
 /* Sticky booking bar */
@@ -217,7 +224,7 @@ body.has-bar footer{padding-bottom:110px}
 .pick label small{display:block;font-size:var(--t-xs);color:var(--ink);letter-spacing:.1em;text-transform:uppercase;font-variant-numeric:tabular-nums}
 .pick input{appearance:none;width:20px;height:20px;border:1px solid var(--ink);display:grid;place-items:center;margin:0;cursor:pointer}
 .pick input:checked{background:var(--pink-deep);border-color:var(--pink-deep)}
-.pick input:checked::after{content:"";width:6px;height:10px;border:solid var(--cream);border-width:0 2px 2px 0;transform:translateY(-1px) rotate(45deg)}
+.pick input:checked::after{content:"";width:6px;height:10px;border:solid var(--ink);border-width:0 2px 2px 0;transform:translateY(-1px) rotate(45deg)}
 .pick .price{font-variant-numeric:tabular-nums;font-size:var(--t-sm)}
 .pick-group{font-size:var(--t-xs);letter-spacing:.22em;text-transform:uppercase;color:var(--ink);padding-top:var(--s3);font-weight:400}
 
@@ -243,7 +250,7 @@ body.has-bar footer{padding-bottom:110px}
 .field input,.field textarea{width:100%;background:transparent;border:0;border-bottom:1px solid var(--ink);padding:10px 0;border-radius:0;font-size:var(--t-md)}
 .field textarea{min-height:90px;resize:vertical;border:1px solid var(--ink);padding:10px}
 .field input:focus,.field textarea:focus{outline:none;border-color:var(--pink-deep);box-shadow:0 1px 0 var(--pink-deep)}
-.field .err{font-size:var(--t-sm);color:var(--pink-deep);min-height:1.2em}
+.field .err{font-size:var(--t-sm);color:var(--error);min-height:1.2em}
 .check{display:flex;gap:var(--s2);align-items:flex-start;font-size:var(--t-sm);cursor:pointer}
 .check input{accent-color:var(--pink-deep);width:18px;height:18px;margin-top:2px}
 

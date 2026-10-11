@@ -39,6 +39,8 @@ export function Header() {
           <nav className="nav-l" aria-label="Primary">
             <Link href="/" aria-current={current("/")}>Home</Link>
             <Link href="/services" aria-current={current("/services")}>Our services</Link>
+            <Link href="/policies" aria-current={current("/policies")}>Policies</Link>
+            <Link href="/faq" aria-current={current("/faq")}>FAQ</Link>
           </nav>
           <Logo />
           <div className="right">
@@ -60,6 +62,8 @@ export function Header() {
         <Link href="/">home</Link>
         <Link href="/services">our services</Link>
         <Link href="/book">book an appointment</Link>
+        <Link href="/policies">policies</Link>
+        <Link href="/faq">faq</Link>
         <Link href="/manage">manage bookings</Link>
         <span className="eyebrow">Bookings powered by Fresha</span>
       </nav>

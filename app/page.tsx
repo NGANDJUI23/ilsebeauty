@@ -3,18 +3,40 @@ import { HeroCarousel } from "@/components/HeroCarousel";
 import { SignatureCards } from "@/components/SignatureCards";
 import { HoursTable } from "@/components/HoursTable";
 
+/** Nom de marque écrit comme sur le logo : ILSE en noir, BEAUTY en rose. */
+function Wordmark() {
+  return (
+    <span className="wordmark">
+      ILSE<span>BEAUTY</span>
+    </span>
+  );
+}
+
 export default function HomePage() {
   return (
     <div className="view">
       <HeroCarousel />
 
       <section className="wrap intro" aria-label="About ILSEBEAUTY">
-        <span className="sparkles" aria-hidden="true">✧<small>⋆</small></span>
-        <p>
-          Introducing <em>ILSEBEAUTY</em>, a sophisticated and luxurious lash brand that aims to empower and inspire you to step
-          outside of your creative boundaries. A studio that encourages individuality, beauty and confidence at its core.
-          At <em>ILSEBEAUTY</em>, we intend to provide an experience that is unlike any other.
-        </p>
+        <div className="intro-text">
+          <span className="sparkles" aria-hidden="true">✧<small>⋆</small></span>
+          <p>
+            Introducing <Wordmark />, a sophisticated and luxurious lash brand that aims to empower and inspire you to step
+            outside of your creative boundaries. A studio that encourages individuality, beauty and confidence at its core.
+            At <Wordmark />, we intend to provide an experience that is unlike any other.
+          </p>
+        </div>
+        <figure className="intro-photo">
+          {/* Photo Unsplash (usage commercial autorisé) : remplace l'identifiant par une photo du studio */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="https://images.unsplash.com/photo-1758739011301-0d348a60d32e?auto=format&fit=crop&w=900&h=1100&q=72"
+            srcSet="https://images.unsplash.com/photo-1758739011301-0d348a60d32e?auto=format&fit=crop&w=600&h=733&q=72 600w, https://images.unsplash.com/photo-1758739011301-0d348a60d32e?auto=format&fit=crop&w=900&h=1100&q=72 900w"
+            sizes="(min-width: 900px) 40vw, 100vw"
+            alt="A beauty artist shaping a client's brows with a fine brush"
+            loading="lazy"
+          />
+        </figure>
       </section>
 
       <section className="wrap sec" style={{ paddingTop: 0 }} aria-label="Signature sets">

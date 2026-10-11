@@ -1,23 +1,9 @@
 import type { Metadata } from "next";
 import { getCatalog } from "@/lib/api";
+import { PolicyList } from "@/components/Policies";
+import { FaqList } from "@/components/Faq";
 
 export const metadata: Metadata = { title: "Manage bookings" };
-
-const POLICIES: [string, string][] = [
-  ["Deposit", "A deposit secures new full sets and is taken off your final bill."],
-  ["24-hour notice", "Change or cancel at least 24 hours ahead to keep your deposit."],
-  ["Patch test", "New clients with sensitive eyes can book a free patch test 48 hours before."],
-  ["Fills", "Fills need at least 40% of your lashes still in place, otherwise we book a full set."],
-  ["Come prepared", "Arrive with clean lashes, no mascara, and contact lenses out."],
-  ["Aftercare", "Keep lashes dry for 24 hours and brush them gently each morning."]
-];
-
-const FAQ: [string, string][] = [
-  ["I didn't get a confirmation. Is my booking made?", "Your booking is only confirmed when Fresha emails or texts you. If nothing arrived within a few minutes, check your spam folder, then sign in to Fresha to see if it's listed."],
-  ["Can I change the service I booked?", "Yes. In Fresha, open the appointment and choose reschedule, or cancel and book again. If the new service is longer we'll need a slot that fits it."],
-  ["How long does a full set last?", "Most clients come back for a fill every two to three weeks, as natural lashes shed and take extensions with them."],
-  ["Do I need a Fresha account?", "Fresha asks for your name, email and phone when you book. You can sign in later with the same details to manage your appointments."]
-];
 
 export default async function ManagePage() {
   const catalog = await getCatalog();
@@ -59,21 +45,12 @@ export default async function ManagePage() {
 
       <div className="wrap sec" style={{ paddingTop: 0 }}>
         <div className="sec-head"><div><span className="eyebrow">Policies</span><h2 className="h2">before your visit</h2></div></div>
-        <ul className="policy">
-          {POLICIES.map(([t, d]) => (
-            <li key={t}><b>{t}</b><span>{d}</span></li>
-          ))}
-        </ul>
+        <PolicyList />
       </div>
 
-      <div className="wrap sec faq" style={{ paddingTop: 0 }}>
+      <div className="wrap sec" style={{ paddingTop: 0 }}>
         <div className="sec-head"><div><span className="eyebrow">Questions</span><h2 className="h2">good to know</h2></div></div>
-        {FAQ.map(([q, a]) => (
-          <details key={q}>
-            <summary>{q}</summary>
-            <p>{a}</p>
-          </details>
-        ))}
+        <FaqList />
       </div>
     </section>
   );

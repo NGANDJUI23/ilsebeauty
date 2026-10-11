@@ -6,14 +6,13 @@ import { useCallback, useRef, useState } from "react";
 /* Photos Unsplash (licence Unsplash : usage commercial gratuit, sans autorisation).
    Remplace-les par tes propres photos dès que tu en as : seul l'identifiant change. */
 const SLIDES = [
-  { id: "1683719312734-e31de63957ab", tag: "Volume lashes", alt: "Close-up of a dark, fluffy volume lash set on an eye" },
-  { id: "1629397685944-7073f5589754", tag: "Soft curls", alt: "A stylist curling a client's long hair into soft waves in a salon" },
-  { id: "1589710751893-f9a6770ad71b", tag: "Lash application", alt: "A lash artist applying extensions one by one with fine tweezers" },
-  { id: "1765560219023-df32aeecd57d", tag: "Braids", alt: "A woman with long braids sitting outdoors in an orange dress" },
-  { id: "1639629509821-c54cdd984227", tag: "Natural lift", alt: "Close-up of an eye with long, lifted natural lashes" },
-  { id: "1560869713-bf165a9cfac1", tag: "Glossy waves", alt: "Long brown hair styled in glossy, loose waves" },
-  { id: "1718720410649-7524fcb0f0a5", tag: "Brow & lash care", alt: "A beauty artist shaping a client's brows with lash pads in place" },
-  { id: "1573516193421-e587039fb189", tag: "Braided updo", alt: "Long copper hair in a braided style with a velvet scrunchie" }
+  { id: "1783013951101-2d9ed3eac234", tag: "Brow shaping", alt: "A beauty artist shaping a client's brows with a fine brow razor" },
+  { id: "1741774397357-91dcb4a889cd", tag: "Make up", alt: "A makeup artist drawing eyeliner on a client's closed eye" },
+  { id: "1550005869-5fca7db35ddb", tag: "Lashes", alt: "A lash artist applying mascara to a client lying back with eyes closed" },
+  { id: "1758739010986-cbcd556b34ec", tag: "Eye make up", alt: "A makeup artist blending eyeshadow on a client's eyelid" },
+  { id: "1677091508080-d6ee28356318", tag: "Hair", alt: "A stylist in gloves working on a client's hair in a salon" },
+  { id: "1713861331150-0f562882ba93", tag: "Full glam", alt: "A makeup artist applying makeup to a client's face with a brush" },
+  { id: "1788779413503-2f35218d2b65", tag: "Braids", alt: "Stylists braiding clients' hair in a busy salon" }
 ];
 
 const DURATION = 6000; // ms par photo
@@ -73,7 +72,7 @@ export function HeroCarousel() {
       </div>
 
       <div className="carousel-copy wrap">
-        <span className="carousel-eyebrow">Lashes · Brows · Hair</span>
+        <span className="carousel-eyebrow">Brows · Lashes · Make up · Wax</span>
         <h1>shine like the gem that you are</h1>
         <div className="hero-cta">
           <Link className="btn btn-light" href="/book">Book an appointment</Link>

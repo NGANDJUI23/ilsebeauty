@@ -16,6 +16,8 @@ export function Footer() {
               <li><Link href="/services">Our services</Link></li>
               <li><Link href="/book">Book an appointment</Link></li>
               <li><Link href="/manage">Manage bookings</Link></li>
+              <li><Link href="/policies">Policies</Link></li>
+              <li><Link href="/faq">FAQ</Link></li>
             </ul>
           </div>
           <div>
