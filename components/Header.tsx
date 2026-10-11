@@ -25,6 +25,7 @@ export function Header() {
   return (
     <>
       <header className="hdr">
+        <span className="scroll-progress" aria-hidden="true" />
         <div className="wrap hdr-in">
           <button
             className="burger"

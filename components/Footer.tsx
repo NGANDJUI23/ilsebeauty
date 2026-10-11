@@ -4,6 +4,10 @@ import { Logo } from "./Logo";
 export function Footer() {
   return (
     <footer>
+      {/* bord supérieur ondulé, dans la couleur du pied de page */}
+      <svg className="footer-wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <path d="M0,58 C240,4 520,10 760,48 C1000,86 1240,84 1440,26 L1440,90 L0,90 Z" />
+      </svg>
       <div className="wrap">
         <div className="f-grid">
           <div style={{ display: "grid", gap: "var(--s2)" }}>
