@@ -33,8 +33,11 @@ export function Header() {
             aria-controls="drawer"
             onClick={() => setOpen(o => !o)}
           >
-            <span></span>
-            <span></span>
+            {/* deux traits en SVG : rendu identique sur tous les navigateurs mobiles */}
+            <svg viewBox="0 0 44 44" aria-hidden="true" focusable="false">
+              <line className="burger-top" x1="1" y1="15" x2="43" y2="15" />
+              <line className="burger-bottom" x1="1" y1="29" x2="43" y2="29" />
+            </svg>
           </button>
           <nav className="nav-l" aria-label="Primary">
             <Link href="/" aria-current={current("/")}>Home</Link>
