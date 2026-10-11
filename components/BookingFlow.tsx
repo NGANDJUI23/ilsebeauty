@@ -65,7 +65,7 @@ function PanelServices({ onNext }: { onNext: () => void }) {
   const cats = [...new Set(catalog.services.map(s => s.cat))];
   return (
     <>
-      <h3>choose your services</h3>
+      <h3>Choose your services</h3>
       <p className="lede">Select everything you&apos;d like in one visit. Your time and total update as you go.</p>
       <div className="pick">
         {cats.map(c => (
@@ -125,7 +125,7 @@ function PanelTime({ days, onBack, onNext }: { days: Date[]; onBack: () => void;
 
   return (
     <>
-      <h3>pick a day &amp; time</h3>
+      <h3>Pick a day &amp; time</h3>
       <p className="lede">Your visit needs about {fmtD(totals.mins)}. Choose your preferred start time.</p>
       <div className="days" role="group" aria-label="Day">
         {days.map(d => {
@@ -198,7 +198,7 @@ function PanelInfo({ onBack, onNext }: { onBack: () => void; onNext: () => void 
 
   return (
     <>
-      <h3>your details</h3>
+      <h3>Your details</h3>
       <p className="lede">So we can recognise you when you confirm on Fresha.</p>
       <form className="form" noValidate onSubmit={e => { e.preventDefault(); next(); }}>
         <div className="field">
@@ -271,7 +271,7 @@ function PanelReview({ days, onBack }: { days: Date[]; onBack: () => void }) {
 
   return (
     <>
-      <h3>review &amp; confirm</h3>
+      <h3>Review &amp; confirm</h3>
       <p className="lede">
         Check everything, then continue to Fresha to secure your slot. Your booking is confirmed once Fresha sends your confirmation.
       </p>
