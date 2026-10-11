@@ -30,13 +30,13 @@ export default function HomePage() {
           </p>
         </div>
         <figure className="intro-photo" data-reveal="right" style={delay(1)}>
-          {/* Photo Unsplash (usage commercial autorisé) : remplace l'identifiant par une photo du studio */}
+          {/* Photo extraite du flyer ILSEBEAUTY */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="https://images.unsplash.com/photo-1758739011301-0d348a60d32e?auto=format&fit=crop&w=900&h=1100&q=72"
-            srcSet="https://images.unsplash.com/photo-1758739011301-0d348a60d32e?auto=format&fit=crop&w=600&h=733&q=72 600w, https://images.unsplash.com/photo-1758739011301-0d348a60d32e?auto=format&fit=crop&w=900&h=1100&q=72 900w"
-            sizes="(min-width: 900px) 40vw, 100vw"
-            alt="A beauty artist shaping a client's brows with a fine brush"
+            src="/brand/flyer-lash-artist.jpg"
+            width={306}
+            height={382}
+            alt="The ILSEBEAUTY lash artist applying classic lash extensions to a client"
             loading="lazy"
           />
         </figure>
