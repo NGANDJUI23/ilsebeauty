@@ -12,21 +12,24 @@ function Wordmark() {
   );
 }
 
+/** Décalage d'apparition : les éléments d'un même bloc arrivent l'un après l'autre. */
+const delay = (i: number) => ({ "--d": `${i * 110}ms` }) as React.CSSProperties;
+
 export default function HomePage() {
   return (
     <div className="view">
       <HeroCarousel />
 
       <section className="wrap intro" aria-label="About ILSEBEAUTY">
-        <div className="intro-text">
-          <span className="sparkles" aria-hidden="true">✧<small>⋆</small></span>
-          <p>
+        <div className="intro-text" data-reveal="left">
+          <span className="sparkles" aria-hidden="true" data-reveal style={delay(1)}>✧<small>⋆</small></span>
+          <p data-reveal style={delay(2)}>
             Introducing <Wordmark />, a sophisticated and luxurious lash brand that aims to empower and inspire you to step
             outside of your creative boundaries. A studio that encourages individuality, beauty and confidence at its core.
             At <Wordmark />, we intend to provide an experience that is unlike any other.
           </p>
         </div>
-        <figure className="intro-photo">
+        <figure className="intro-photo" data-reveal="right" style={delay(1)}>
           {/* Photo Unsplash (usage commercial autorisé) : remplace l'identifiant par une photo du studio */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -40,44 +43,46 @@ export default function HomePage() {
       </section>
 
       <section className="wrap sec" style={{ paddingTop: 0 }} aria-label="Signature sets">
-        <div className="sec-head">
+        <div className="sec-head" data-reveal>
           <div>
-            <span className="eyebrow">Signature sets</span>
-            <h2 className="h2">The most requested looks</h2>
+            <span className="eyebrow" data-reveal style={delay(1)}>Signature sets</span>
+            <h2 className="h2" data-reveal style={delay(2)}>The most requested looks</h2>
           </div>
-          <Link className="link" href="/services">See the full menu</Link>
+          <Link className="link" href="/services" data-reveal style={delay(3)}>See the full menu</Link>
         </div>
         <SignatureCards />
       </section>
 
-      <section className="band-brown" aria-label="How booking works">
+      <section className="band-brown" aria-label="How booking works" data-reveal="zoom">
         <div className="wrap sec">
           <div className="sec-head">
             <div>
-              <span className="eyebrow">How booking works</span>
-              <h2 className="h2">Three steps to your chair</h2>
+              <span className="eyebrow" data-reveal style={delay(1)}>How booking works</span>
+              <h2 className="h2" data-reveal style={delay(2)}>Three steps to your chair</h2>
             </div>
           </div>
           <ol className="how">
-            <li><h3>Choose your services</h3><p>Pick a full set, a fill or a lift. Add as many as you like to your booking.</p></li>
-            <li><h3>Pick a day and time</h3><p>Choose a preferred slot. We open Monday to Saturday.</p></li>
-            <li><h3>Confirm on Fresha</h3><p>Fresha holds your slot, sends reminders, and lets you change it any time.</p></li>
+            <li data-reveal style={delay(3)}><h3>Choose your services</h3><p>Pick a full set, a fill or a lift. Add as many as you like to your booking.</p></li>
+            <li data-reveal style={delay(4)}><h3>Pick a day and time</h3><p>Choose a preferred slot. We open Monday to Saturday.</p></li>
+            <li data-reveal style={delay(5)}><h3>Confirm on Fresha</h3><p>Fresha holds your slot, sends reminders, and lets you change it any time.</p></li>
           </ol>
         </div>
       </section>
 
-      <section className="band-blush" aria-label="The studio">
+      <section className="band-blush" aria-label="The studio" data-reveal="zoom">
         <div className="wrap sec">
           <div className="studio">
-            <div style={{ display: "grid", gap: "var(--s2)" }}>
-              <span className="eyebrow">The studio</span>
-              <h2 className="h2">By appointment only</h2>
-              <p className="lede">
+            <div style={{ display: "grid", gap: "var(--s2)" }} data-reveal="left">
+              <span className="eyebrow" data-reveal style={delay(1)}>The studio</span>
+              <h2 className="h2" data-reveal style={delay(2)}>By appointment only</h2>
+              <p className="lede" data-reveal style={delay(3)}>
                 One client at a time, a quiet room, fresh linens and a warm blanket. Arrive with clean lashes and no eye makeup so we can start right away.
               </p>
-              <div><Link className="btn ghost" href="/manage">Booking policies</Link></div>
+              <div data-reveal style={delay(4)}><Link className="btn ghost" href="/manage">Booking policies</Link></div>
             </div>
-            <HoursTable />
+            <div data-reveal="right" style={delay(2)}>
+              <HoursTable />
+            </div>
           </div>
         </div>
       </section>

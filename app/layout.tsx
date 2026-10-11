@@ -6,6 +6,7 @@ import { BookingProvider } from "@/components/BookingProvider";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { BookingBar } from "@/components/BookingBar";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 const workSans = Work_Sans({
   subsets: ["latin"],
@@ -46,6 +47,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <main id="main">{children}</main>
             <BookingBar />
             <Footer />
+            <ScrollReveal />
           </BookingProvider>
         ) : (
           <main className="wrap sec">
