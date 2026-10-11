@@ -10,7 +10,7 @@ export default function BookPage() {
         <div className="sec-head">
           <div>
             <span className="eyebrow">Book an appointment</span>
-            <h1 className="h2" style={{ fontSize: "var(--t-hero)", lineHeight: 1 }}>reserve your time</h1>
+            <h1 className="h2" style={{ fontSize: "var(--t-hero)", lineHeight: 1 }}>Reserve your time</h1>
           </div>
         </div>
         <BookingFlow />

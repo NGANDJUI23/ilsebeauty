@@ -74,7 +74,7 @@ export function HeroCarousel() {
 
       <div className="carousel-copy wrap">
         <span className="carousel-eyebrow">Lashes · Brows · Hair</span>
-        <h1>shine like the gem that you are</h1>
+        <h1>Shine like the gem that you are</h1>
         <div className="hero-cta">
           <Link className="btn btn-light" href="/book">Book an appointment</Link>
           <Link className="btn btn-outline-light" href="/services">Our services</Link>
