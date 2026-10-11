@@ -163,11 +163,11 @@ main{min-height:60vh}
 .how h3{font-size:var(--t-md);font-weight:400}
 .how p{font-size:var(--t-sm);color:var(--ink)}
 .how{padding:0;margin:0}
-.band-brown{background:var(--brown);color:var(--on-brown)}
+.band-brown{background:var(--brown);color:var(--ink)}
 .band-brown .h2{color:var(--pink)}
-.band-brown .eyebrow,.band-brown .lede,.band-brown p{color:var(--on-brown)}
-.band-brown .how li{border-top-color:var(--on-brown)}
-.band-brown .how li::before{color:var(--on-brown)}
+.band-brown .eyebrow,.band-brown .lede,.band-brown p{color:var(--ink)}
+.band-brown .how li{border-top-color:var(--ink)}
+.band-brown .how li::before{color:var(--ink)}
 .band-blush{background:var(--blush)}
 .band-blush .hours td{border-bottom-color:var(--cream)}
 
@@ -308,16 +308,16 @@ body.has-bar footer{padding-bottom:110px}
 .faq details p{padding-bottom:var(--s3);font-size:var(--t-sm);color:var(--ink);max-width:64ch}
 
 /* Footer */
-footer{background:var(--brown);color:var(--on-brown);padding-block:var(--s6) var(--s4)}
+footer{background:var(--brown);color:var(--ink);padding-block:var(--s6) var(--s4)}
 .f-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:var(--s4)}
 
 
-footer h4{margin:0 0 var(--s2);font-size:var(--t-xs);letter-spacing:.22em;text-transform:uppercase;font-weight:400;color:var(--on-brown)}
+footer h4{margin:0 0 var(--s2);font-size:var(--t-xs);letter-spacing:.22em;text-transform:uppercase;font-weight:400;color:var(--ink)}
 footer ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:var(--t-sm)}
 footer a{text-decoration:none}
 footer a:hover{text-decoration:underline;text-underline-offset:4px}
 footer p{font-size:var(--t-sm)}
-.copy{margin-top:var(--s6);padding-top:var(--s3);border-top:1px solid rgba(95,74,64,.25);display:flex;flex-wrap:wrap;gap:var(--s2);justify-content:space-between;font-size:var(--t-xs);letter-spacing:.12em}
+.copy{margin-top:var(--s6);padding-top:var(--s3);border-top:1px solid rgba(26,26,26,.2);display:flex;flex-wrap:wrap;gap:var(--s2);justify-content:space-between;font-size:var(--t-xs);letter-spacing:.12em}
 
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
