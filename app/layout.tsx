@@ -49,7 +49,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           </BookingProvider>
         ) : (
           <main className="wrap sec">
-            <h1 className="h2">We&apos;ll be right back</h1>
+            <h1 className="h2">we&apos;ll be right back</h1>
             <p className="lede" style={{ marginTop: "var(--s2)" }}>
               The booking service is temporarily unavailable. Please try again in a few minutes.
             </p>

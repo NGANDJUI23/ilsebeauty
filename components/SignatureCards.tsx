@@ -27,7 +27,7 @@ export function SignatureCards() {
             <LashArt kind={ART_FOR[s.id] || "classic"} seed={i + 1} />
           </figure>
           <span className="from">{fmtD(s.mins)} · {price(s.price)}</span>
-          <h3>{s.name}</h3>
+          <h3>{s.name.toLowerCase()}</h3>
           <p>{s.desc}</p>
           <span className="link" style={{ fontSize: "var(--t-xs)", letterSpacing: ".18em", textTransform: "uppercase" }}>
             Book this look

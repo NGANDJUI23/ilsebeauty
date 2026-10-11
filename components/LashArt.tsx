@@ -24,7 +24,7 @@ function Tray() {
     <svg viewBox="0 0 200 200" role="presentation">
       <rect width="200" height="200" fill="#f1e6da" />
       {rows}
-      <rect x="150" y="160" width="26" height="14" fill="var(--brand-pink)" opacity=".85" />
+      <rect x="150" y="160" width="26" height="14" fill="#a35257" opacity=".85" />
     </svg>
   );
 }
@@ -82,7 +82,7 @@ export function LashArt({ kind, seed }: { kind: ArtKind; seed: number }) {
       <path d={`M${cx - w + 6} ${cy - 22} Q${cx} ${cy - 44} ${cx + w - 4} ${cy - 18}`} stroke="#7b4d39" strokeWidth="1" fill="none" opacity=".45" />
       {lashes}
       {brow}
-      <circle cx={cx + w - 6} cy={cy - 30} r="3" fill="#ffffff" opacity=".8" />
+      <circle cx={cx + w - 6} cy={cy - 30} r="3" fill="#f1d8d3" opacity=".8" />
     </svg>
   );
 }
