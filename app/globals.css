@@ -10,9 +10,9 @@
   --pink-deep:#f770b7;  /* flyer pink: all pink wording (headlines, prices, numbers) */
   --error:#a31571;      /* form errors only, kept dark enough to read */
   --blush:#f2c4d6;      /* deeper rose: bands, selected states, hairlines. Never text */
-  --brown:#5f4a40;      /* flyer brown: bands, footer, booking bar (on-brown copy 6.8:1) */
-  --brown-2:#7a6156;    /* lighter flyer brown: hover on brown */
-  --on-brown:#f9e3ec;   /* copy on brown */
+  --brown:#e4d4ca;      /* flyer brown ("Book your appointment" and $29 badges): bands, footer, booking bar */
+  --brown-2:#d6c3b7;    /* slightly deeper flyer brown: hover on brown */
+  --on-brown:#5f4a40;   /* flyer's dark brown (text, checkboxes): copy on brown, 5.7:1 */
   --frame:#e8e8e4;      /* polaroid frames only, not a UI fill */
   --line:var(--blush);  /* decorative dividers */
   --font:var(--font-work-sans), "Work Sans", system-ui, sans-serif;
@@ -167,7 +167,7 @@ main{min-height:60vh}
 .band-brown .h2{color:var(--pink)}
 .band-brown .eyebrow,.band-brown .lede,.band-brown p{color:var(--on-brown)}
 .band-brown .how li{border-top-color:var(--on-brown)}
-.band-brown .how li::before{color:var(--blush)}
+.band-brown .how li::before{color:var(--on-brown)}
 .band-blush{background:var(--blush)}
 .band-blush .hours td{border-bottom-color:var(--cream)}
 
@@ -296,12 +296,12 @@ footer{background:var(--brown);color:var(--on-brown);padding-block:var(--s6) var
 .f-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:var(--s4)}
 
 
-footer h4{margin:0 0 var(--s2);font-size:var(--t-xs);letter-spacing:.22em;text-transform:uppercase;font-weight:400;color:var(--blush)}
+footer h4{margin:0 0 var(--s2);font-size:var(--t-xs);letter-spacing:.22em;text-transform:uppercase;font-weight:400;color:var(--on-brown)}
 footer ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:var(--t-sm)}
 footer a{text-decoration:none}
 footer a:hover{text-decoration:underline;text-underline-offset:4px}
 footer p{font-size:var(--t-sm)}
-.copy{margin-top:var(--s6);padding-top:var(--s3);border-top:1px solid rgba(249,227,236,.25);display:flex;flex-wrap:wrap;gap:var(--s2);justify-content:space-between;font-size:var(--t-xs);letter-spacing:.12em}
+.copy{margin-top:var(--s6);padding-top:var(--s3);border-top:1px solid rgba(95,74,64,.25);display:flex;flex-wrap:wrap;gap:var(--s2);justify-content:space-between;font-size:var(--t-xs);letter-spacing:.12em}
 
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
