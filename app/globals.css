@@ -215,11 +215,24 @@ main{min-height:60vh}
 .add[aria-pressed="true"] svg{transform:rotate(45deg)}
 
 /* Sticky booking bar */
-.bar{position:fixed;left:0;right:0;bottom:0;z-index:15;background:var(--brand-brown);color:var(--brand-brown-dark);padding:14px var(--gutter) calc(14px + env(safe-area-inset-bottom,0px));display:flex;gap:var(--s2);align-items:center;justify-content:space-between;transform:translateY(110%);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:15;background:rgba(228,212,202,.8);background:color-mix(in srgb,var(--brand-brown) 80%,transparent);-webkit-backdrop-filter:blur(12px) saturate(1.2);backdrop-filter:blur(12px) saturate(1.2);border-top:1px solid rgba(95,74,64,.15);color:var(--brand-brown-dark);padding:14px var(--gutter) calc(14px + env(safe-area-inset-bottom,0px));display:flex;gap:var(--s2);align-items:center;justify-content:space-between;transform:translateY(110%);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
 .bar.show{transform:none}
 .bar .sum{font-size:var(--t-sm);font-variant-numeric:tabular-nums;min-width:0}
-.bar .sum span{display:block;font-size:var(--t-xs);letter-spacing:.16em;text-transform:uppercase;opacity:.7}
-.bar .btn{white-space:nowrap;background:var(--brand-brown-dark);border-color:var(--brand-brown-dark);color:var(--bg)}
+.bar .sum span{display:block;font-size:var(--t-xs);letter-spacing:.16em;text-transform:uppercase;font-weight:500}
+.bar .btn{position:relative;white-space:nowrap;background:var(--brand-brown-dark);border-color:var(--brand-brown-dark);color:var(--bg);animation:nudge 4s ease-in-out 1.2s infinite}
+/* attire l'œil : balancement toutes les 4 s + onde rose qui pulse */
+.bar .btn::after{content:"";position:absolute;inset:-1px;border:2px solid var(--brand-pink);pointer-events:none;animation:ring 2s ease-out infinite}
+.bar .btn:hover,.bar .btn:focus-visible,.bar .btn:hover::after,.bar .btn:focus-visible::after{animation-play-state:paused}
+.bar:not(.show) .btn,.bar:not(.show) .btn::after{animation:none}
+@keyframes nudge{
+  0%,72%,100%{transform:none}
+  75%{transform:translateY(-4px) rotate(-2.5deg)}
+  79%{transform:translateY(0) rotate(2.5deg)}
+  83%{transform:translateY(-3px) rotate(-1.5deg)}
+  87%{transform:rotate(1deg)}
+  91%{transform:none}
+}
+@keyframes ring{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(1.12,1.45)}}
 .bar .btn:hover{background:var(--brand-pink);border-color:var(--brand-pink);color:var(--ink)}
 
 body.has-bar footer{padding-bottom:110px}
