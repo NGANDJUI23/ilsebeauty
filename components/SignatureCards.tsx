@@ -7,8 +7,8 @@ import { fmtD } from "@/lib/format";
 /* Photos Unsplash (usage commercial autorisé). Remplace l'identifiant par tes propres photos. */
 const LOOK_PHOTOS: Record<string, { id: string; alt: string }> = {
   hybrid: { id: "1736319550323-057478f01980", alt: "Close-up of a woman's brown eyes with soft, defined lashes" },
-  volume: { id: "1657271516922-6eab2182f17d", alt: "Close-up of a woman's face with full, fluffy lashes" },
-  wet: { id: "1715195060250-b321e5cd5171", alt: "Close-up of an eye with long, spiky lashes in warm light" }
+  lift: { id: "1657271516922-6eab2182f17d", alt: "Close-up of a woman's face with lifted, darkened lashes" },
+  lam: { id: "1783013951101-2d9ed3eac234", alt: "A beauty artist shaping a client's brows" }
 };
 const FALLBACK = { id: "1683719312734-e31de63957ab", alt: "Close-up of a lash set" };
 const photo = (id: string, w: number) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&h=${Math.round(w * 1.25)}&q=72`;

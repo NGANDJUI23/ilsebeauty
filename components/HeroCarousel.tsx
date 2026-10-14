@@ -98,7 +98,7 @@ export function HeroCarousel() {
       </div>
 
       <div className="carousel-copy wrap">
-        <span className="carousel-eyebrow">Brows · Lashes · Make up · Wax</span>
+        <span className="carousel-eyebrow">Brows · Lashes · Make up · Waxing</span>
         <h1>Shine like the gem that you are</h1>
         <div className="hero-cta">
           <Link className="btn btn-light" href="/book">Book an appointment</Link>
