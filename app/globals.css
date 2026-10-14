@@ -10,9 +10,9 @@
   --pink-deep:#f770b7;  /* flyer pink: all pink wording (headlines, prices, numbers) */
   --error:#a31571;      /* form errors only, kept dark enough to read */
   --blush:#f2c4d6;      /* deeper rose: bands, selected states, hairlines. Never text */
-  --brown:#e4d4ca;      /* flyer brown ("Book your appointment" and $29 badges): bands, footer, booking bar */
-  --brown-2:#d6c3b7;    /* slightly deeper flyer brown: hover on brown */
-  --on-brown:#5f4a40;   /* flyer's dark brown (text, checkboxes): copy on brown, 5.7:1 */
+  --brown:#9d5a30;      /* flyer dark brown (wording under "Extensions"): bands, footer, booking bar */
+  --brown-2:#b0693d;    /* slightly lighter flyer brown: hover on brown */
+  --on-brown:#fff7fa;   /* near-white rose copy on brown (5.1:1) */
   --line:var(--blush);  /* decorative dividers */
   --font:var(--font-work-sans), "Work Sans", system-ui, sans-serif;
   --font-serif:var(--font-libre-baskerville), "Libre Baskerville", Baskerville, Georgia, serif;
@@ -186,8 +186,9 @@ main{min-height:60vh}
 .how h3{font-size:var(--t-md);font-weight:400}
 .how p{font-size:var(--t-sm);color:var(--ink)}
 .how{padding:0;margin:0}
+.band-brown,footer{--ink:var(--on-brown)}
 .band-brown{background:var(--brown);color:var(--ink)}
-.band-brown .h2{color:var(--pink)}
+.band-brown .h2{color:var(--on-brown)}
 .band-brown .eyebrow,.band-brown .lede,.band-brown p{color:var(--ink)}
 .band-brown .how li{border-top-color:var(--ink)}
 .band-brown .how li::before{color:var(--ink)}
@@ -222,12 +223,12 @@ main{min-height:60vh}
 .add[aria-pressed="true"] svg{transform:rotate(45deg)}
 
 /* Sticky booking bar */
-.bar{position:fixed;left:0;right:0;bottom:0;z-index:15;background:rgba(228,212,202,.8);background:color-mix(in srgb,var(--brown) 80%,transparent);-webkit-backdrop-filter:blur(12px) saturate(1.2);backdrop-filter:blur(12px) saturate(1.2);border-top:1px solid rgba(95,74,64,.15);color:var(--on-brown);padding:14px var(--gutter) calc(14px + env(safe-area-inset-bottom,0px));display:flex;gap:var(--s2);align-items:center;justify-content:space-between;transform:translateY(120%);opacity:0;transition:transform .35s cubic-bezier(.4,0,1,1),opacity .25s}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:15;background:rgba(157,90,48,.88);background:color-mix(in srgb,var(--brown) 88%,transparent);-webkit-backdrop-filter:blur(12px) saturate(1.2);backdrop-filter:blur(12px) saturate(1.2);border-top:1px solid rgba(249,227,236,.15);color:var(--on-brown);padding:14px var(--gutter) calc(14px + env(safe-area-inset-bottom,0px));display:flex;gap:var(--s2);align-items:center;justify-content:space-between;transform:translateY(120%);opacity:0;transition:transform .35s cubic-bezier(.4,0,1,1),opacity .25s}
 /* entrée avec rebond quand on quitte la première section */
 .bar.show{transform:none;opacity:1;transition:transform .75s cubic-bezier(.34,1.56,.64,1),opacity .3s}
 .bar .sum{font-size:var(--t-sm);font-variant-numeric:tabular-nums;min-width:0}
 .bar .sum span{display:block;font-size:var(--t-xs);letter-spacing:.16em;text-transform:uppercase;font-weight:500}
-.bar .btn{position:relative;white-space:nowrap;background:var(--on-brown);border-color:var(--on-brown);color:var(--cream);
+.bar .btn{position:relative;white-space:nowrap;background:var(--on-brown);border-color:var(--on-brown);color:var(--brown);
   animation:pop .6s cubic-bezier(.34,1.56,.64,1) .25s both,nudge 4s ease-in-out 1.6s infinite}
 .bar .btn:hover{background:var(--pink-deep);border-color:var(--pink-deep);color:var(--ink)}
 /* attire l'œil : balancement toutes les 4 s + onde rose qui pulse */
@@ -309,8 +310,8 @@ body.has-bar footer{padding-bottom:110px}
 .review dt{font-size:var(--t-xs);letter-spacing:.18em;text-transform:uppercase;color:var(--ink);margin:0}
 .review dd{margin:0;min-width:0}
 @media (max-width:520px){.review div{grid-template-columns:1fr;gap:4px}}
-.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,140%);background:var(--brown);color:var(--on-brown);padding:12px 20px;font-size:var(--t-sm);z-index:40;transition:transform .3s;max-width:calc(100% - 32px)}
-.toast.show{transform:translate(-50%,0)}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,140%);background:var(--brown);color:var(--on-brown);padding:12px 20px;font-size:var(--t-sm);z-index:40;transition:transform .3s,visibility 0s .3s;visibility:hidden;max-width:calc(100% - 32px)}
+.toast.show{transform:translate(-50%,0);visibility:visible;transition:transform .3s}
 
 /* Manage */
 .cards3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:var(--s3)}
@@ -340,7 +341,7 @@ footer ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:var
 footer a{text-decoration:none}
 footer a:hover{text-decoration:underline;text-underline-offset:4px}
 footer p{font-size:var(--t-sm)}
-.copy{margin-top:var(--s6);padding-top:var(--s3);border-top:1px solid rgba(26,26,26,.2);display:flex;flex-wrap:wrap;gap:var(--s2);justify-content:space-between;font-size:var(--t-xs);letter-spacing:.12em}
+.copy{margin-top:var(--s6);padding-top:var(--s3);border-top:1px solid rgba(249,227,236,.25);display:flex;flex-wrap:wrap;gap:var(--s2);justify-content:space-between;font-size:var(--t-xs);letter-spacing:.12em}
 
 [data-js-reveal] [data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0ms)}
 [data-js-reveal] [data-reveal="left"]{transform:translateX(-48px)}
