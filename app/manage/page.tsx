@@ -31,7 +31,7 @@ export default async function ManagePage() {
           <article className="mcard">
             <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><rect x="4" y="6" width="20" height="18" /><path d="M4 11h20M9 3v5M19 3v5M11 15l6 6M17 15l-6 6" /></svg>
             <h3>Cancel</h3>
-            <p>Cancel through Fresha with 24 hours&apos; notice. Later cancellations may lose the deposit.</p>
+            <p>Cancel through Fresha with 24 hours&apos; notice. Later cancellation loses deposit.</p>
             <a className="btn ghost" href={fresha} target="_blank" rel="noopener">Open Fresha</a>
           </article>
           <article className="mcard">

@@ -63,7 +63,7 @@ export default function HomePage() {
           </div>
           <ol className="how">
             <li data-reveal style={delay(3)}><h3>Choose your services</h3><p>Pick a full set, a fill or a lift. Add as many as you like to your booking.</p></li>
-            <li data-reveal style={delay(4)}><h3>Pick a day and time</h3><p>Choose a preferred slot. We're open seven days a week.</p></li>
+            <li data-reveal style={delay(4)}><h3>Pick a day and time</h3><p>Choose a preferred slot. We're open Tuesday to Sunday.</p></li>
             <li data-reveal style={delay(5)}><h3>Confirm on Fresha</h3><p>Fresha holds your slot, sends reminders, and lets you change it any time.</p></li>
           </ol>
         </div>

@@ -23,7 +23,8 @@ export function Footer() {
           <div>
             <h4>Hours</h4>
             <ul>
-              <li>Mon – Fri · 09:00 – 19:00</li>
+              <li>Monday · Closed</li>
+              <li>Tue – Fri · 09:00 – 19:00</li>
               <li>Saturday · 09:00 – 17:00</li>
               <li>Sunday · 12:00 – 17:00</li>
             </ul>
